@@ -25,11 +25,12 @@ get-Random genera un número aleatorio
 get-Date
 8.
   un objeto tipo DateTime
+  
 9.
 get-date | Select-Object -Property DayOfWeek
   DayOfWeek
   ---------
-   Saturday
+  Saturday
 
 10.
 get-HotFix
