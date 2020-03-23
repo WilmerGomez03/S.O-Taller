@@ -25,6 +25,7 @@
    ``Responding`` muestra eso). Haga que la tabla tome el mínimo de espacio
    horizontal, pero no permita que la información se trunque.
    > PS C:\Users\Andres gomez> Get-Process | Select-Object -Property ID,Responding | ft -Property * -AutoSize -Wrap
+   
 	   Id Responding
 	   -- ----------
 	  956       True
