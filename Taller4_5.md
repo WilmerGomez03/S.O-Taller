@@ -1,24 +1,24 @@
 # Taller powershell modulo 4 y 5
 ## Modulo 4
 ###### transcript
-	**********************
-Inicio de la transcripción de Windows PowerShell
-Hora de inicio: 20200323103339
-Nombre de usuario: APC\Andres gomez
-Usuario RunAs: APC\Andres gomez
-Nombre de la configuración: 
-Máquina: APC (Microsoft Windows NT 10.0.18362.0)
-Aplicación host: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
-Id. de proceso: 11808
-PSVersion: 5.1.18362.628
-PSEdition: Desktop
-PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
-BuildVersion: 10.0.18362.628
-CLRVersion: 4.0.30319.42000
-WSManStackVersion: 3.0
-PSRemotingProtocolVersion: 2.3
-SerializationVersion: 1.1.0.1
-**********************
+	__**********************
+	Inicio de la transcripción de Windows PowerShell
+	Hora de inicio: 20200323103339
+	Nombre de usuario: APC\Andres gomez
+	Usuario RunAs: APC\Andres gomez
+	Nombre de la configuración: 
+	Máquina: APC (Microsoft Windows NT 10.0.18362.0)
+	Aplicación host: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+	Id. de proceso: 11808
+	PSVersion: 5.1.18362.628
+	PSEdition: Desktop
+	PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+	BuildVersion: 10.0.18362.628
+	CLRVersion: 4.0.30319.42000
+	WSManStackVersion: 3.0
+	PSRemotingProtocolVersion: 2.3
+	SerializationVersion: 1.1.0.1
+	**********************__
 1. Mostrar una tabla de procesos que incluya únicamente los nombres de los
    procesos, sus IDs, y si están respondiendo a Windows (la propiedad
    ``Responding`` muestra eso). Haga que la tabla tome el mínimo de espacio
