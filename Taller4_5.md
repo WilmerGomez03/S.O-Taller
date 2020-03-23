@@ -1,7 +1,7 @@
 # Taller powershell modulo 4 y 5
 ## Modulo 4
 ###### transcript
-	__**********************
+	**********************
 	Inicio de la transcripción de Windows PowerShell
 	Hora de inicio: 20200323103339
 	Nombre de usuario: APC\Andres gomez
@@ -18,11 +18,175 @@
 	WSManStackVersion: 3.0
 	PSRemotingProtocolVersion: 2.3
 	SerializationVersion: 1.1.0.1
-	**********************__
+	**********************
+	La transcripción ha comenzado. El archivo de salida es E:\Semestre 8\SO_powershell\taller4_5.txt
 1. Mostrar una tabla de procesos que incluya únicamente los nombres de los
    procesos, sus IDs, y si están respondiendo a Windows (la propiedad
    ``Responding`` muestra eso). Haga que la tabla tome el mínimo de espacio
    horizontal, pero no permita que la información se trunque.
+   > PS C:\Users\Andres gomez> Get-Process | Select-Object -Property ID,Responding | ft -Property * -AutoSize -Wrap
+	   Id Responding
+	   -- ----------
+	  956       True
+	10568       True
+	 9264       True
+	 7232       True
+	13944       True
+	12104       True
+	 4156       True
+	10900       True
+	11716       True
+	 2424       True
+	 3200       True
+	 5184       True
+	 5220       True
+	 7620       True
+	 7996       True
+	 9632       True
+	 9640       True
+	10852       True
+	13368       True
+	13600       True
+	13608       True
+	14356       True
+	15272       True
+	 4772       True
+	13848       True
+	  820       True
+	13688       True
+	10276       True
+	 5760       True
+	13332       True
+	13972       True
+	 4016       True
+	10316       True
+	 1096       True
+	14248       True
+	 4116       True
+	    0       True
+	 1908       True
+	12172       True
+	11788       True
+	 7268       True
+	 5008       True
+	 3304       True
+	 4376       True
+	 5652       True
+	  736       True
+	 5440       True
+	 9392       True
+	11808       True
+	 6440       True
+	 8540       True
+	 2932       True
+	   96       True
+	 3896       True
+	 4468       True
+	 4624       True
+	 7040       True
+	13732       True
+	10200       True
+	  748       True
+	 1944       True
+	 4132       True
+	13620       True
+	  568       True
+	 3052       True
+	 3724       True
+	 4252       True
+	 8380       True
+	  908       True
+	 1044       True
+	 1068       True
+	 1088       True
+	 1252       True
+	 1308       True
+	 1448       True
+	 1460       True
+	 1504       True
+	 1556       True
+	 1600       True
+	 1672       True
+	 1796       True
+	 1852       True
+	 1892       True
+	 1900       True
+	 1976       True
+	 2068       True
+	 2084       True
+	 2112       True
+	 2140       True
+	 2184       True
+	 2216       True
+	 2268       True
+	 2276       True
+	 2468       True
+	 2532       True
+	 2584       True
+	 2652       True
+	 2732       True
+	 2736       True
+	 2836       True
+	 2948       True
+	 2956       True
+	 3020       True
+	 3084       True
+	 3312       True
+	 3320       True
+	 3380       True
+	 3424       True
+	 3604       True
+	 3760       True
+	 3876       True
+	 3884       True
+	 4036       True
+	 4044       True
+	 4056       True
+	 4104       True
+	 4400       True
+	 4440       True
+	 4668       True
+	 4704       True
+	 4812       True
+	 5092       True
+	 5236       True
+	 5276       True
+	 5284       True
+	 5536       True
+	 6136       True
+	 6156       True
+	 6300       True
+	 6484       True
+	 6644       True
+	 6856       True
+	 7076       True
+	 7292       True
+	 7356       True
+	 8360       True
+	 8708       True
+	 8776       True
+	 9496       True
+	 9688       True
+	10512       True
+	10948       True
+	13632       True
+	13788       True
+	15176       True
+	    4       True
+	 2324       True
+	 4288       True
+	 4280       True
+	 4124       True
+	 4324       True
+	14344       True
+	  940       True
+	14100       True
+	 5532       True
+	 6296       True
+	10616       True
+	 1160       True
+	  624       True
+   	
 
 2. Muestre una tabla de procesos que incluya los nombres de los procesos y sus
    IDs. También incluya columnas para uso de memoria virtual y física;
