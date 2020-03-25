@@ -2176,9 +2176,40 @@ Container           :
 
 
 
-PS C:\Users\Andres gomez> Get-HotFix | where -FilterScript {$_.Installed -eq 'Administrador'} | fl -Property *
-PS C:\Users\Andres gomez> Get-HotFix | where -FilterScript {$_.Installed -eq 'System'} | fl -Property *
+PS C:\Users\Andres gomez> Get-HotFix | where -FilterScript {$_.Installedby -eq 'Administrador'} | fl -Property *
 PS C:\Users\Andres gomez> Get-HotFix | where -FilterScript {$_.Installedby -eq 'System'} | fl -Property *
+PS C:\Users\Andres gomez> Get-HotFix | where -FilterScript {$_.Installedby -like '*System*' -and $_.Description -like 'update'} | ft 
+
+Source        Description      HotFixID      InstalledBy          InstalledOn              
+------        -----------      --------      -----------          -----------              
+APC           Update           KB4537572     NT AUTHORITY\SYSTEM  16/03/2020 12:00:00 a. m.
+APC           Update           KB4551762     NT AUTHORITY\SYSTEM  16/03/2020 12:00:00 a. m.
+
+
+
+PS C:\Users\Andres gomez> Get-HotFix | where -FilterScript {$_.Installedby -like '*System*' -and $_.Description -like 'update'} | fl
+
+
+Description         : Update
+FixComments         : 
+HotFixID            : KB4537572
+InstallDate         : 
+InstalledBy         : NT AUTHORITY\SYSTEM
+InstalledOn         : 16/03/2020 12:00:00 a. m.
+Name                : 
+ServicePackInEffect : 
+Status              : 
+
+Description         : Update
+FixComments         : 
+HotFixID            : KB4551762
+InstallDate         : 
+InstalledBy         : NT AUTHORITY\SYSTEM
+InstalledOn         : 16/03/2020 12:00:00 a. m.
+Name                : 
+ServicePackInEffect : 
+Status              : 
+
 
 PS C:\Users\Andres gomez> Get-process | Where {$_.Name -like 'Svchost*' -or $_.Name -like 'Conhost*'} | ft -Property id ,ProcessName, Description -Wrap -AutoSize
 
