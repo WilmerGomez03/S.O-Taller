@@ -2631,6 +2631,296 @@ Id          : 15072
 ProcessName : svchost
 Description : Proceso host para los servicios de Windows
 
+
+PS C:\Users\Andres gomez> Get-WmiObject -Namespace root\CIMv2 -class win32_networkAdapterconfiguration | Get-Member
+
+
+   TypeName: System.Management.ManagementObject#root\CIMv2\Win32_NetworkAdapterConfiguration
+
+Name                         MemberType    Definition                                                                                                                       
+----                         ----------    ----------                                                                                                                       
+PSComputerName               AliasProperty PSComputerName = __SERVER                                                                                                        
+DisableIPSec                 Method        System.Management.ManagementBaseObject DisableIPSec()                                                                            
+EnableDHCP                   Method        System.Management.ManagementBaseObject EnableDHCP()                                                                              
+EnableIPSec                  Method        System.Management.ManagementBaseObject EnableIPSec(System.String[] IPSecPermitTCPPorts, System.String[] IPSecPermitUDPPorts, S...
+EnableStatic                 Method        System.Management.ManagementBaseObject EnableStatic(System.String[] IPAddress, System.String[] SubnetMask)                       
+ReleaseDHCPLease             Method        System.Management.ManagementBaseObject ReleaseDHCPLease()                                                                        
+RenewDHCPLease               Method        System.Management.ManagementBaseObject RenewDHCPLease()                                                                          
+SetDNSDomain                 Method        System.Management.ManagementBaseObject SetDNSDomain(System.String DNSDomain)                                                     
+SetDNSServerSearchOrder      Method        System.Management.ManagementBaseObject SetDNSServerSearchOrder(System.String[] DNSServerSearchOrder)                             
+SetDynamicDNSRegistration    Method        System.Management.ManagementBaseObject SetDynamicDNSRegistration(System.Boolean FullDNSRegistrationEnabled, System.Boolean Dom...
+SetGateways                  Method        System.Management.ManagementBaseObject SetGateways(System.String[] DefaultIPGateway, System.UInt16[] GatewayCostMetric)          
+SetIPConnectionMetric        Method        System.Management.ManagementBaseObject SetIPConnectionMetric(System.UInt32 IPConnectionMetric)                                   
+SetIPXFrameTypeNetworkPairs  Method        System.Management.ManagementBaseObject SetIPXFrameTypeNetworkPairs(System.String[] IPXNetworkNumber, System.UInt32[] IPXFrameT...
+SetTcpipNetbios              Method        System.Management.ManagementBaseObject SetTcpipNetbios(System.UInt32 TcpipNetbiosOptions)                                        
+SetWINSServer                Method        System.Management.ManagementBaseObject SetWINSServer(System.String WINSPrimaryServer, System.String WINSSecondaryServer)         
+ArpAlwaysSourceRoute         Property      bool ArpAlwaysSourceRoute {get;set;}                                                                                             
+ArpUseEtherSNAP              Property      bool ArpUseEtherSNAP {get;set;}                                                                                                  
+Caption                      Property      string Caption {get;set;}                                                                                                        
+DatabasePath                 Property      string DatabasePath {get;set;}                                                                                                   
+DeadGWDetectEnabled          Property      bool DeadGWDetectEnabled {get;set;}                                                                                              
+DefaultIPGateway             Property      string[] DefaultIPGateway {get;set;}                                                                                             
+DefaultTOS                   Property      byte DefaultTOS {get;set;}                                                                                                       
+DefaultTTL                   Property      byte DefaultTTL {get;set;}                                                                                                       
+Description                  Property      string Description {get;set;}                                                                                                    
+DHCPEnabled                  Property      bool DHCPEnabled {get;set;}                                                                                                      
+DHCPLeaseExpires             Property      string DHCPLeaseExpires {get;set;}                                                                                               
+DHCPLeaseObtained            Property      string DHCPLeaseObtained {get;set;}                                                                                              
+DHCPServer                   Property      string DHCPServer {get;set;}                                                                                                     
+DNSDomain                    Property      string DNSDomain {get;set;}                                                                                                      
+DNSDomainSuffixSearchOrder   Property      string[] DNSDomainSuffixSearchOrder {get;set;}                                                                                   
+DNSEnabledForWINSResolution  Property      bool DNSEnabledForWINSResolution {get;set;}                                                                                      
+DNSHostName                  Property      string DNSHostName {get;set;}                                                                                                    
+DNSServerSearchOrder         Property      string[] DNSServerSearchOrder {get;set;}                                                                                         
+DomainDNSRegistrationEnabled Property      bool DomainDNSRegistrationEnabled {get;set;}                                                                                     
+ForwardBufferMemory          Property      uint32 ForwardBufferMemory {get;set;}                                                                                            
+FullDNSRegistrationEnabled   Property      bool FullDNSRegistrationEnabled {get;set;}                                                                                       
+GatewayCostMetric            Property      uint16[] GatewayCostMetric {get;set;}                                                                                            
+IGMPLevel                    Property      byte IGMPLevel {get;set;}                                                                                                        
+Index                        Property      uint32 Index {get;set;}                                                                                                          
+InterfaceIndex               Property      uint32 InterfaceIndex {get;set;}                                                                                                 
+IPAddress                    Property      string[] IPAddress {get;set;}                                                                                                    
+IPConnectionMetric           Property      uint32 IPConnectionMetric {get;set;}                                                                                             
+IPEnabled                    Property      bool IPEnabled {get;set;}                                                                                                        
+IPFilterSecurityEnabled      Property      bool IPFilterSecurityEnabled {get;set;}                                                                                          
+IPPortSecurityEnabled        Property      bool IPPortSecurityEnabled {get;set;}                                                                                            
+IPSecPermitIPProtocols       Property      string[] IPSecPermitIPProtocols {get;set;}                                                                                       
+IPSecPermitTCPPorts          Property      string[] IPSecPermitTCPPorts {get;set;}                                                                                          
+IPSecPermitUDPPorts          Property      string[] IPSecPermitUDPPorts {get;set;}                                                                                          
+IPSubnet                     Property      string[] IPSubnet {get;set;}                                                                                                     
+IPUseZeroBroadcast           Property      bool IPUseZeroBroadcast {get;set;}                                                                                               
+IPXAddress                   Property      string IPXAddress {get;set;}                                                                                                     
+IPXEnabled                   Property      bool IPXEnabled {get;set;}                                                                                                       
+IPXFrameType                 Property      uint32[] IPXFrameType {get;set;}                                                                                                 
+IPXMediaType                 Property      uint32 IPXMediaType {get;set;}                                                                                                   
+IPXNetworkNumber             Property      string[] IPXNetworkNumber {get;set;}                                                                                             
+IPXVirtualNetNumber          Property      string IPXVirtualNetNumber {get;set;}                                                                                            
+KeepAliveInterval            Property      uint32 KeepAliveInterval {get;set;}                                                                                              
+KeepAliveTime                Property      uint32 KeepAliveTime {get;set;}                                                                                                  
+MACAddress                   Property      string MACAddress {get;set;}                                                                                                     
+MTU                          Property      uint32 MTU {get;set;}                                                                                                            
+NumForwardPackets            Property      uint32 NumForwardPackets {get;set;}                                                                                              
+PMTUBHDetectEnabled          Property      bool PMTUBHDetectEnabled {get;set;}                                                                                              
+PMTUDiscoveryEnabled         Property      bool PMTUDiscoveryEnabled {get;set;}                                                                                             
+ServiceName                  Property      string ServiceName {get;set;}                                                                                                    
+SettingID                    Property      string SettingID {get;set;}                                                                                                      
+TcpipNetbiosOptions          Property      uint32 TcpipNetbiosOptions {get;set;}                                                                                            
+TcpMaxConnectRetransmissions Property      uint32 TcpMaxConnectRetransmissions {get;set;}                                                                                   
+TcpMaxDataRetransmissions    Property      uint32 TcpMaxDataRetransmissions {get;set;}                                                                                      
+TcpNumConnections            Property      uint32 TcpNumConnections {get;set;}                                                                                              
+TcpUseRFC1122UrgentPointer   Property      bool TcpUseRFC1122UrgentPointer {get;set;}                                                                                       
+TcpWindowSize                Property      uint16 TcpWindowSize {get;set;}                                                                                                  
+WINSEnableLMHostsLookup      Property      bool WINSEnableLMHostsLookup {get;set;}                                                                                          
+WINSHostLookupFile           Property      string WINSHostLookupFile {get;set;}                                                                                             
+WINSPrimaryServer            Property      string WINSPrimaryServer {get;set;}                                                                                              
+WINSScopeID                  Property      string WINSScopeID {get;set;}                                                                                                    
+WINSSecondaryServer          Property      string WINSSecondaryServer {get;set;}                                                                                            
+__CLASS                      Property      string __CLASS {get;set;}                                                                                                        
+__DERIVATION                 Property      string[] __DERIVATION {get;set;}                                                                                                 
+__DYNASTY                    Property      string __DYNASTY {get;set;}                                                                                                      
+__GENUS                      Property      int __GENUS {get;set;}                                                                                                           
+__NAMESPACE                  Property      string __NAMESPACE {get;set;}                                                                                                    
+__PATH                       Property      string __PATH {get;set;}                                                                                                         
+__PROPERTY_COUNT             Property      int __PROPERTY_COUNT {get;set;}                                                                                                  
+__RELPATH                    Property      string __RELPATH {get;set;}                                                                                                      
+__SERVER                     Property      string __SERVER {get;set;}                                                                                                       
+__SUPERCLASS                 Property      string __SUPERCLASS {get;set;}                                                                                                   
+DHCP                         PropertySet   DHCP {Description, DHCPEnabled, DHCPLeaseExpires, DHCPLeaseObtained, DHCPServer, Index}                                          
+DNS                          PropertySet   DNS {Description, DNSDomain, DNSDomainSuffixSearchOrder, DNSEnabledForWINSResolution, DNSHostName, DNSServerSearchOrder, Domai...
+IP                           PropertySet   IP {Description, Index, IPAddress, IPConnectionMetric, IPEnabled, IPFilterSecurityEnabled}                                       
+PSStatus                     PropertySet   PSStatus {DHCPLeaseExpires, Index, Description}                                                                                  
+WINS                         PropertySet   WINS {Description, Index, WINSEnableLMHostsLookup, WINSHostLookupFile, WINSPrimaryServer, WINSScopeID, WINSSecondaryServer}      
+ConvertFromDateTime          ScriptMethod  System.Object ConvertFromDateTime();                                                                                             
+ConvertToDateTime            ScriptMethod  System.Object ConvertToDateTime();                                                                                               
+
+
+
+PS C:\Users\Andres gomez> Get-WmiObject -Namespace root\CIMv2 -class win32_networkAdapterconfiguration | Select-Object IP
+
+
+Description             : Microsoft Kernel Debug Network Adapter
+Index                   : 0
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : Kaspersky Security Data Escort Adapter
+Index                   : 1
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : Broadcom 802.11n Network Adapter
+Index                   : 2
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : Realtek PCIe FE Family Controller
+Index                   : 3
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : Microsoft Wi-Fi Direct Virtual Adapter
+Index                   : 4
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : Bluetooth Device (Personal Area Network)
+Index                   : 5
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : Microsoft Wi-Fi Direct Virtual Adapter
+Index                   : 6
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : WAN Miniport (SSTP)
+Index                   : 7
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : WAN Miniport (IKEv2)
+Index                   : 8
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : WAN Miniport (L2TP)
+Index                   : 9
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : WAN Miniport (PPTP)
+Index                   : 10
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : WAN Miniport (PPPOE)
+Index                   : 11
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : WAN Miniport (IP)
+Index                   : 12
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : WAN Miniport (IPv6)
+Index                   : 13
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : WAN Miniport (Network Monitor)
+Index                   : 14
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : Remote NDIS based Internet Sharing Device
+Index                   : 15
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : Remote NDIS Compatible Device
+Index                   : 16
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : Kaspersky Security Data Escort Adapter
+Index                   : 17
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : TAP-Windows Adapter V9
+Index                   : 18
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : RAS Async Adapter
+Index                   : 19
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : Dispositivo remoto compatible con NDIS
+Index                   : 20
+IPAddress               : {192.168.42.95, fe80::3c1f:9c13:1ca2:e65f}
+IPConnectionMetric      : 25
+IPEnabled               : True
+IPFilterSecurityEnabled : False
+
+Description             : Remote NDIS Compatible Device
+Index                   : 21
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+Description             : VirtualBox Host-Only Ethernet Adapter
+Index                   : 22
+IPAddress               : {192.168.56.1, fe80::5cb4:1f20:3ad4:e1e2}
+IPConnectionMetric      : 25
+IPEnabled               : True
+IPFilterSecurityEnabled : False
+
+Description             : VMware Virtual Ethernet Adapter for VMnet1
+Index                   : 23
+IPAddress               : {192.168.235.1, fe80::ccea:5677:6aa3:829f}
+IPConnectionMetric      : 35
+IPEnabled               : True
+IPFilterSecurityEnabled : False
+
+Description             : VMware Virtual Ethernet Adapter for VMnet8
+Index                   : 24
+IPAddress               : {192.168.245.1, fe80::b4bb:432f:3dbd:f6d2}
+IPConnectionMetric      : 35
+IPEnabled               : True
+IPFilterSecurityEnabled : False
+
+Description             : 802.11n USB Wireless LAN Card
+Index                   : 25
+IPAddress               : 
+IPConnectionMetric      : 
+IPEnabled               : False
+IPFilterSecurityEnabled : 
+
+
 PS C:\Users\Andres gomez> Get-WmiObject -Namespace root\CIMv2 -class Win32_QuickFixEngineering
 
 Source        Description      HotFixID      InstalledBy          InstalledOn
