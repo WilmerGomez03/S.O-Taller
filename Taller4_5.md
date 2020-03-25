@@ -90,8 +90,12 @@
    de red? ¿Posee dicha clase algún método para liberar un préstamo de
    dirección (lease) DHCP?
    
+   >Get-WmiObject -Namespace root\CIMv2 -class win32_networkAdapterconfiguration | Get-member
    
+   >Get-WmiObject -Namespace root\CIMv2 -class win32_networkAdapterconfiguration | Select-Object IP
    
+   Exite el metodo RenewDHCPLease o ReleaseDHCPLease 
+  
 2. Despliegue una lista de parches empleando WMI (Microsoft se refiere a los
    parches con el nombre **quick-fix engineering**). Es diferente el listado al
    que produce el cmdlet ``Get-Hotfix``?
