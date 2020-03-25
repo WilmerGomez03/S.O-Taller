@@ -41,7 +41,7 @@
    tamaño del archivo. La propiedad de tamaño se llama ``length`` en Powershell,
    pero para mayor claridad, la columna se debe llamar **Tamaño** en su listado.
    
-   > ls *.exe -Path C:\Windows |fl -Property @{n='Nombre';e={$_.Name}},@{n='Versión';e={$_.VersionInfo.FileVersion}},@{n='Tamaño (KB)';e={$_.Length / 1KB -as [int]}}
+   > ls * .exe -Path C:\Windows |fl -Property @{n='Nombre';e={$_.Name}},@{n='Versión';e={$_.VersionInfo.FileVersion}},@{n='Tamaño (KB)';e={$_.Length / 1KB -as [int]}}
    
 7. Importe el módulo ``NetAdapter`` (empleando el comando ``Import-Module
    NetAdapter``).
@@ -62,7 +62,7 @@
 9. Genere una lista de todos los archivos ``.exe`` del directorio
    ``C:\Windows\System32`` que tengan más de 5 MB.
    
-   > ls *.exe -path C:\Windows\System32 | where -FilterScript {$_.Length /1MB -gt 5 } | fl -Property name,@{n='Tamaño (MB)';e={$_.Length / 1MB -as [int]}}
+   > ls * .exe -path C:\Windows\System32 | where -FilterScript {$_.Length /1MB -gt 5 } | fl -Property name,@{n='Tamaño (MB)';e={$_.Length / 1MB -as [int]}}
 
 10. Muestre una lista de parches que sean actualizaciones de seguridad.
 
@@ -103,8 +103,8 @@
 4. Empleando cmdlets de CIM, liste todas las clases del namespace
    ``SecurityCenter2``, que tengan **product** como parte del nombre.
    
-   > Get-CimClass -Namespace root\SecurityCenter2 | where cimclassname -Like '***product***'
-   
+   > Get-CimClass -Namespace root\SecurityCenter2 | where cimclassname -Like '*product*'
+   	__*Nota:*__ *product* esta entre asteriscos pero el formato lo coloca en cursiva
    > Get-CimClass -Namespace root\SecurityCenter2 -ClassName *product* | Select-Object *  
    
 5. Empleando cmdlets de CIM, y los resultados del ejercicio anterior, muestre
