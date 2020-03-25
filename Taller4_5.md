@@ -104,7 +104,9 @@
    ``SecurityCenter2``, que tengan **product** como parte del nombre.
    
    > Get-CimClass -Namespace root\SecurityCenter2 | where cimclassname -Like '*product*'
+   
    	__*Nota:*__ *product* esta entre asteriscos pero el formato lo coloca en cursiva
+	
    > Get-CimClass -Namespace root\SecurityCenter2 -ClassName *product* | Select-Object *  
    
 5. Empleando cmdlets de CIM, y los resultados del ejercicio anterior, muestre
