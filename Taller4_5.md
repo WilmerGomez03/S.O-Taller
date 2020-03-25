@@ -76,4 +76,41 @@
 
 12. Genere una lista de todos los procesos que estén corriendo con el nombre
     **Conhost** o **Svchost**.
-    >Get-process | Where {$_.Name -like 'Svchost*' -or $_.Name -like 'Conhost*'} | fl -Property id,ProcessName, @{name='VM';e={$_.VM / 1MB -as [int]}}
+    >Get-process | Where {$_.Name -like 'Svchost*' -or $_.Name -like 'Conhost*'} | ft -Property id ,ProcessName, Description -Wrap -AutoSize
+    
+## Modulo 5 comandos
+
+1. ¿Cuál clase puede emplearse para consultar la dirección IP de un adaptador
+   de red? ¿Posee dicha clase algún método para liberar un préstamo de
+   dirección (lease) DHCP?
+   
+   
+   
+2. Despliegue una lista de parches empleando WMI (Microsoft se refiere a los
+   parches con el nombre **quick-fix engineering**). Es diferente el listado al
+   que produce el cmdlet ``Get-Hotfix``?
+   
+   >Get-WmiObject -Namespace root\CIMv2 -class Win32_QuickFixEngineering
+   
+   no hay diferencia con respecto al listado generado por ambos cmdlet
+   
+3. Empleando WMI, muestre una lista de servicios, que incluya su status actual,
+   su modalidad de inicio, y las cuentas que emplean para hacer login.
+   
+   >Get-WmiObject -Namespace ROOT\CIMV2 -Class Win32_Service | Select-Object name, Status,StartMode,Startname | fl *
+   >Get-WmiObject -Namespace ROOT\CIMV2 -Class Win32_Service | Select-Object name, Status,StartMode,Startname | ft *
+   
+4. Empleando cmdlets de CIM, liste todas las clases del namespace
+   ``SecurityCenter2``, que tengan **product** como parte del nombre.
+   
+   > Get-CimClass -Namespace root\SecurityCenter2 | where cimclassname -Like '*product*'
+   > Get-CimClass -Namespace root\SecurityCenter2 -ClassName *product* | Select-Object *  
+   
+5. Empleando cmdlets de CIM, y los resultados del ejercicio anterior, muestre
+   los nombres de las aplicaciones antispyware instaladas en el sistema.
+   También puede consultar si hay productos antivirus instalados en el sistema.
+   
+   > Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntiSpywareProduct | fl -Property displayName,productState,timestamp
+
+   > Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntiVirusProduct | fl -Property displayName,productState,timestamp
+   
