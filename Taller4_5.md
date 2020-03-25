@@ -103,7 +103,7 @@
 4. Empleando cmdlets de CIM, liste todas las clases del namespace
    ``SecurityCenter2``, que tengan **product** como parte del nombre.
    
-   > Get-CimClass -Namespace root\SecurityCenter2 | where cimclassname -Like '*product*'
+   > Get-CimClass -Namespace root\SecurityCenter2 | where cimclassname -Like '***product***'
    
    > Get-CimClass -Namespace root\SecurityCenter2 -ClassName *product* | Select-Object *  
    
