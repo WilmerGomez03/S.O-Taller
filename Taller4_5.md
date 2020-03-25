@@ -73,7 +73,13 @@
     usuario ``Administrador``, que sean actualizaciones. Si no tiene ninguno,
     busque parches instalados por el usuario ``System``. Note que algunos parches
     no tienen valor en el campo ``Installed By``.
-
+    
+    > Get-HotFix | where -FilterScript {$_.Installedby -like '*System*' -and $_.Description -like 'update'} | ft 
+    
+    > Get-HotFix | where -FilterScript {$_.Installedby -like '*System*' -and $_.Description -like 'update'} | fl 
+    
+    __*Nota:*__ *System* esta entre asteriscos pero el formato lo coloca en cursiva
+    
 12. Genere una lista de todos los procesos que estén corriendo con el nombre
     **Conhost** o **Svchost**.
     >Get-process | Where {$_.Name -like 'Svchost*' -or $_.Name -like 'Conhost*'} | ft -Property id ,ProcessName, Description -Wrap -AutoSize
