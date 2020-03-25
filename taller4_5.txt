@@ -1,0 +1,4440 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20200323103339
+Nombre de usuario: APC\Andres gomez
+Usuario RunAs: APC\Andres gomez
+Nombre de la configuración: 
+Máquina: APC (Microsoft Windows NT 10.0.18362.0)
+Aplicación host: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Id. de proceso: 11808
+PSVersion: 5.1.18362.628
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.628
+BuildVersion: 10.0.18362.628
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+La transcripción ha comenzado. El archivo de salida es E:\Semestre 8\SO_powershell\taller4_5.txt
+PS C:\Users\Andres gomez> Get-Process | Select-Object -Property ID,Responding | ft -Property * -AutoSize -Wrap
+
+   Id Responding
+   -- ----------
+  956       True
+10568       True
+ 9264       True
+ 7232       True
+13944       True
+12104       True
+ 4156       True
+10900       True
+11716       True
+ 2424       True
+ 3200       True
+ 5184       True
+ 5220       True
+ 7620       True
+ 7996       True
+ 9632       True
+ 9640       True
+10852       True
+13368       True
+13600       True
+13608       True
+14356       True
+15272       True
+ 4772       True
+13848       True
+  820       True
+13688       True
+10276       True
+ 5760       True
+13332       True
+13972       True
+ 4016       True
+10316       True
+ 1096       True
+14248       True
+ 4116       True
+    0       True
+ 1908       True
+12172       True
+11788       True
+ 7268       True
+ 5008       True
+ 3304       True
+ 4376       True
+ 5652       True
+  736       True
+ 5440       True
+ 9392       True
+11808       True
+ 6440       True
+ 8540       True
+ 2932       True
+   96       True
+ 3896       True
+ 4468       True
+ 4624       True
+ 7040       True
+13732       True
+10200       True
+  748       True
+ 1944       True
+ 4132       True
+13620       True
+  568       True
+ 3052       True
+ 3724       True
+ 4252       True
+ 8380       True
+  908       True
+ 1044       True
+ 1068       True
+ 1088       True
+ 1252       True
+ 1308       True
+ 1448       True
+ 1460       True
+ 1504       True
+ 1556       True
+ 1600       True
+ 1672       True
+ 1796       True
+ 1852       True
+ 1892       True
+ 1900       True
+ 1976       True
+ 2068       True
+ 2084       True
+ 2112       True
+ 2140       True
+ 2184       True
+ 2216       True
+ 2268       True
+ 2276       True
+ 2468       True
+ 2532       True
+ 2584       True
+ 2652       True
+ 2732       True
+ 2736       True
+ 2836       True
+ 2948       True
+ 2956       True
+ 3020       True
+ 3084       True
+ 3312       True
+ 3320       True
+ 3380       True
+ 3424       True
+ 3604       True
+ 3760       True
+ 3876       True
+ 3884       True
+ 4036       True
+ 4044       True
+ 4056       True
+ 4104       True
+ 4400       True
+ 4440       True
+ 4668       True
+ 4704       True
+ 4812       True
+ 5092       True
+ 5236       True
+ 5276       True
+ 5284       True
+ 5536       True
+ 6136       True
+ 6156       True
+ 6300       True
+ 6484       True
+ 6644       True
+ 6856       True
+ 7076       True
+ 7292       True
+ 7356       True
+ 8360       True
+ 8708       True
+ 8776       True
+ 9496       True
+ 9688       True
+10512       True
+10948       True
+13632       True
+13788       True
+15176       True
+    4       True
+ 2324       True
+ 4288       True
+ 4280       True
+ 4124       True
+ 4324       True
+14344       True
+  940       True
+14100       True
+ 5532       True
+ 6296       True
+10616       True
+ 1160       True
+  624       True
+
+
+PS C:\Users\Andres gomez> Get-Process | Select-Object -Property ID,name,vm,pm | ft -Property ID,Name,@{n='Memoria virtual (MB)';e={$_.VM / 1MB -as [int]}},@{n='Memoria fisica (MB)';e={$_.PM / 1MB -as [int]}} -AutoSize -Wrap
+
+   Id Name                                                           Memoria virtual (MB) Memoria fisica (MB)
+   -- ----                                                           -------------------- -------------------
+  956 ACMON                                                                           130                  12
+10568 AppVShNotify                                                                   4176                   2
+ 9264 armsvc                                                                           43                   2
+ 7232 AsusTPCenter                                                                   4247                   4
+13944 AsusTPHelper                                                                   4190                   1
+12104 AsusTPLoader                                                                   4239                   3
+ 4156 avp                                                                             833                 314
+10900 avpui                                                                           378                  78
+11716 CastSrv                                                                     2101379                   4
+ 2424 chrome                                                                      2101777                  59
+ 5184 chrome                                                                      2102914                 158
+ 5220 chrome                                                                      2102953                 191
+ 7620 chrome                                                                      2101755                  49
+ 7996 chrome                                                                      2101704                  22
+ 9632 chrome                                                                      2101987                  80
+ 9640 chrome                                                                      2101742                  48
+10852 chrome                                                                      2101391                   2
+13368 chrome                                                                      2102104                 168
+13600 chrome                                                                      2101381                   2
+13608 chrome                                                                      2101775                  57
+14356 chrome                                                                      2101601                  25
+15140 chrome                                                                      2101665                  12
+15272 chrome                                                                      2102014                 119
+ 4772 conhost                                                                     2101335                   6
+13848 conhost                                                                     2101400                   4
+  820 csrss                                                                       2101347                   2
+13688 csrss                                                                       2101365                   2
+10276 ctfmon                                                                      2101368                   4
+ 5760 dllhost                                                                     2101404                   3
+13332 dllhost                                                                     2101426                   4
+13972 dwm                                                                         2101537                  30
+ 4016 esif_uf                                                                     2101313                   1
+10316 explorer                                                                    2101893                  77
+ 1096 fontdrvhost                                                                 2101314                   2
+14248 fontdrvhost                                                                 2101414                   3
+ 4116 ICEsoundService64                                                              4166                   3
+    0 Idle                                                                              0                   0
+ 1908 igfxCUIService                                                                 4188                   3
+12172 igfxEM                                                                         4226                   3
+11788 igfxHK                                                                         4195                   2
+ 7268 igfxTray                                                                       4220                   3
+ 5008 isa                                                                             158                  15
+ 3304 jhi_service                                                                      41                   2
+ 4376 jtagserver                                                                     4164                  11
+ 5652 LMS                                                                              64                   4
+  736 lsass                                                                       2101343                   8
+ 5440 OfficeClickToRun                                                            2101577                  46
+ 9392 powershell                                                                  2101928                  57
+11808 powershell_ise                                                                 5149                 143
+ 6440 PresentationFontCache                                                          4643                  24
+ 8540 RAVBg64                                                                        4236                   6
+ 2932 RAVCpl64                                                                       4249                   4
+   96 Registry                                                                        199                  16
+ 3896 RuntimeBroker                                                               2101488                  11
+ 4468 RuntimeBroker                                                               2101398                   6
+ 4624 RuntimeBroker                                                               2101373                   3
+ 7040 SearchUI                                                                    2135009                 110
+13732 SecurityHealthHost                                                          2101367                   2
+10200 SecurityHealthService                                                       2101350                   3
+  748 services                                                                    2101328                   6
+ 1944 SettingSyncHost                                                             2101374                   4
+ 4132 SgrmBroker                                                                  2101304                   3
+13620 sihost                                                                      2101405                   5
+  568 smss                                                                        2101288                   1
+ 3052 SocketHeciServer                                                               4183                   2
+ 3724 spoolsv                                                                     2101357                   6
+ 4252 sqlwriter                                                                      4173                   2
+ 8380 StartMenuExperienceHost                                                     2101565                  24
+  908 svchost                                                                     2101316                   2
+ 1044 svchost                                                                     2101304                   1
+ 1068 svchost                                                                     2101396                  14
+ 1088 svchost                                                                     2101323                   3
+ 1252 svchost                                                                     2101353                   8
+ 1308 svchost                                                                     2101329                   3
+ 1448 svchost                                                                     2101329                   3
+ 1460 svchost                                                                     2101331                   3
+ 1504 svchost                                                                     2101410                   6
+ 1556 svchost                                                                     2101322                   2
+ 1600 svchost                                                                     2101325                   2
+ 1672 svchost                                                                     2101324                   2
+ 1796 svchost                                                                     2101330                   2
+ 1852 svchost                                                                     2101354                   4
+ 1892 svchost                                                                     2101317                   1
+ 1900 svchost                                                                     2101355                  17
+ 1976 svchost                                                                     2101323                   5
+ 2068 svchost                                                                     2101352                   7
+ 2084 svchost                                                                     2101333                   3
+ 2112 svchost                                                                     2101353                   6
+ 2140 svchost                                                                     2101377                   6
+ 2184 svchost                                                                     2101349                  18
+ 2216 svchost                                                                     2101363                  10
+ 2268 svchost                                                                     2101321                   2
+ 2276 svchost                                                                     2101350                   2
+ 2468 svchost                                                                     2101350                   4
+ 2532 svchost                                                                     2101317                   2
+ 2584 svchost                                                                     2101344                   4
+ 2652 svchost                                                                     2101328                   4
+ 2732 svchost                                                                     2101326                   2
+ 2736 svchost                                                                     2101328                   3
+ 2836 svchost                                                                     2101313                   1
+ 2948 svchost                                                                     2101331                   3
+ 2956 svchost                                                                     2101316                   2
+ 3020 svchost                                                                     2101349                   7
+ 3084 svchost                                                                     2101331                   2
+ 3312 svchost                                                                     2101375                   5
+ 3320 svchost                                                                     2101348                   2
+ 3380 svchost                                                                     2101318                   2
+ 3424 svchost                                                                     2101376                   7
+ 3604 svchost                                                                     2101352                   3
+ 3760 svchost                                                                     2101379                  14
+ 3876 svchost                                                                     2101328                   3
+ 3884 svchost                                                                     2101318                   2
+ 4036 svchost                                                                     2101322                   2
+ 4044 svchost                                                                     2102541                  83
+ 4056 svchost                                                                     2101516                  15
+ 4104 svchost                                                                     2101330                   2
+ 4400 svchost                                                                     2101336                   2
+ 4440 svchost                                                                     2101318                   2
+ 4668 svchost                                                                     2101327                   2
+ 4704 svchost                                                                     2101320                   2
+ 4812 svchost                                                                     2101348                   4
+ 5092 svchost                                                                     2101373                   4
+ 5236 svchost                                                                     2101338                   3
+ 5276 svchost                                                                     2101401                   5
+ 5284 svchost                                                                     2101381                   9
+ 5536 svchost                                                                     2101324                   2
+ 6136 svchost                                                                     2101330                   2
+ 6156 svchost                                                                     2101340                   3
+ 6300 svchost                                                                     2101324                   2
+ 6484 svchost                                                                     2101381                   4
+ 6644 svchost                                                                     2101329                   2
+ 6856 svchost                                                                     2101339                   4
+ 7076 svchost                                                                     2101468                   6
+ 7292 svchost                                                                     2101359                   5
+ 7356 svchost                                                                     2101326                   3
+ 8360 svchost                                                                     2101370                   8
+ 8708 svchost                                                                     2101323                   2
+ 8776 svchost                                                                     2101319                   2
+ 9496 svchost                                                                     2101333                   2
+ 9688 svchost                                                                     2101339                   3
+10512 svchost                                                                     2101353                   3
+10948 svchost                                                                     2101343                   2
+13632 svchost                                                                     2101407                   4
+15176 svchost                                                                     2101320                   2
+    4 System                                                                            7                   0
+ 2324 taskhostw                                                                   2101433                   6
+ 4288 vmnat                                                                            77                   3
+ 4280 vmnetdhcp                                                                        64                   8
+ 4124 vmware-authd                                                                    120                   6
+ 4324 vmware-usbarbitrator64                                                      2101350                   3
+14344 WindowsInternal.ComposableShell.Experiences.TextInput.InputApp              2101569                  14
+  940 wininit                                                                     2101314                   2
+14100 winlogon                                                                    2101344                   2
+ 5532 wlanext                                                                     2101317                   1
+ 6296 WmiPrvSE                                                                         73                   4
+10616 WmiPrvSE                                                                    2101377                  15
+ 1160 WUDFHost                                                                    2101377                   7
+  624 XBoxStat                                                                       4208                   2
+
+
+PS C:\Users\Andres gomez> get-eventlog -list | select-object log,MinimumRetentionDays | ft -Property @{n='NombreLog';e={$_.log}},@{n='Per-Retention';e={$_.MinimumRetentionDays}}
+
+
+NombreLog                Per-Retention
+---------                -------------
+Application                          0
+ESRV_SVC_QUEENCREEK                  7
+HardwareEvents                       0
+Internet Explorer                    7
+isaAgentLog                          7
+Kaspersky Event Log                  7
+Key Management Service               0
+OAlerts                              0
+Security
+System                               0
+USER_ESRV_SVC_QUEENCREEK             7
+Windows PowerShell                   0
+
+
+PS C:\Users\Andres gomez> get-service | select-object -Property Name,Status |sort Status -Descending | fl -property * -groupby status
+
+
+   Status: Running
+
+
+Name   : PcaSvc
+Status : Running
+
+Name   : Themes
+Status : Running
+
+Name   : mpssvc
+Status : Running
+
+Name   : TimeBrokerSvc
+Status : Running
+
+Name   : TokenBroker
+Status : Running
+
+Name   : TrkWks
+Status : Running
+
+Name   : LSM
+Status : Running
+
+Name   : LMS
+Status : Running
+
+Name   : LicenseManager
+Status : Running
+
+Name   : LanmanWorkstation
+Status : Running
+
+Name   : LanmanServer
+Status : Running
+
+Name   : KeyIso
+Status : Running
+
+Name   : JTAGServer
+Status : Running
+
+Name   : jhi_service
+Status : Running
+
+Name   : UserManager
+Status : Running
+
+Name   : UsoSvc
+Status : Running
+
+Name   : iphlpsvc
+Status : Running
+
+Name   : VaultSvc
+Status : Running
+
+Name   : Intel(R) Security Assist
+Status : Running
+
+Name   : Intel(R) Capability Licensing Service TCP IP Interface
+Status : Running
+
+Name   : InstallService
+Status : Running
+
+Name   : IKEEXT
+Status : Running
+
+Name   : igfxCUIService2.0.0.0
+Status : Running
+
+Name   : ICEsoundService
+Status : Running
+
+Name   : FontCache3.0.0.0
+Status : Running
+
+Name   : FontCache
+Status : Running
+
+Name   : VMnetDHCP
+Status : Running
+
+Name   : VMUSBArbService
+Status : Running
+
+Name   : EventSystem
+Status : Running
+
+Name   : EventLog
+Status : Running
+
+Name   : TermService
+Status : Running
+
+Name   : TapiSrv
+Status : Running
+
+Name   : TabletInputService
+Status : Running
+
+Name   : NcbService
+Status : Running
+
+Name   : SecurityHealthService
+Status : Running
+
+Name   : SessionEnv
+Status : Running
+
+Name   : Schedule
+Status : Running
+
+Name   : SgrmBroker
+Status : Running
+
+Name   : SamSs
+Status : Running
+
+Name   : RpcSs
+Status : Running
+
+Name   : RpcEptMapper
+Status : Running
+
+Name   : RmSvc
+Status : Running
+
+Name   : ShellHWDetection
+Status : Running
+
+Name   : RasMan
+Status : Running
+
+Name   : ProfSvc
+Status : Running
+
+Name   : Spooler
+Status : Running
+
+Name   : Power
+Status : Running
+
+Name   : PolicyAgent
+Status : Running
+
+Name   : VMware NAT Service
+Status : Running
+
+Name   : SQLWriter
+Status : Running
+
+Name   : PlugPlay
+Status : Running
+
+Name   : PhoneSvc
+Status : Running
+
+Name   : SstpSvc
+Status : Running
+
+Name   : StateRepository
+Status : Running
+
+Name   : stisvc
+Status : Running
+
+Name   : StorSvc
+Status : Running
+
+Name   : OneSyncSvc_6ff6505
+Status : Running
+
+Name   : nsi
+Status : Running
+
+Name   : NlaSvc
+Status : Running
+
+Name   : NgcSvc
+Status : Running
+
+Name   : NgcCtnrSvc
+Status : Running
+
+Name   : netprofm
+Status : Running
+
+Name   : Netman
+Status : Running
+
+Name   : SystemEventsBroker
+Status : Running
+
+Name   : SSDPSRV
+Status : Running
+
+Name   : esifsvc
+Status : Running
+
+Name   : VMAuthdService
+Status : Running
+
+Name   : Winmgmt
+Status : Running
+
+Name   : DeviceAssociationService
+Status : Running
+
+Name   : DcomLaunch
+Status : Running
+
+Name   : CryptSvc
+Status : Running
+
+Name   : WinHttpAutoProxySvc
+Status : Running
+
+Name   : CoreMessagingRegistrar
+Status : Running
+
+Name   : WlanSvc
+Status : Running
+
+Name   : ClickToRunSvc
+Status : Running
+
+Name   : CDPUserSvc_6ff6505
+Status : Running
+
+Name   : CDPSvc
+Status : Running
+
+Name   : cbdhsvc_6ff6505
+Status : Running
+
+Name   : camsvc
+Status : Running
+
+Name   : Dhcp
+Status : Running
+
+Name   : bthserv
+Status : Running
+
+Name   : BTAGService
+Status : Running
+
+Name   : BrokerInfrastructure
+Status : Running
+
+Name   : BFE
+Status : Running
+
+Name   : WpnService
+Status : Running
+
+Name   : AVP20.0
+Status : Running
+
+Name   : WpnUserService_6ff6505
+Status : Running
+
+Name   : Audiosrv
+Status : Running
+
+Name   : AudioEndpointBuilder
+Status : Running
+
+Name   : wscsvc
+Status : Running
+
+Name   : Appinfo
+Status : Running
+
+Name   : AdobeARMservice
+Status : Running
+
+Name   : BthAvctpSvc
+Status : Running
+
+Name   : DispBrokerDesktopSvc
+Status : Running
+
+Name   : SENS
+Status : Running
+
+Name   : WdiSystemHost
+Status : Running
+
+Name   : DPS
+Status : Running
+
+Name   : Wcmsvc
+Status : Running
+
+Name   : WbioSrvc
+Status : Running
+
+Name   : Dnscache
+Status : Running
+
+Name   : DisplayEnhancementService
+Status : Running
+
+Name   : DusmSvc
+Status : Running
+
+Name   : DsSvc
+Status : Running
+
+Name   : DoSvc
+Status : Running
+
+Name   : WdiServiceHost
+Status : Running
+
+
+
+   Status: Stopped
+
+
+Name   : workfolderssvc
+Status : Stopped
+
+Name   : WMPNetworkSvc
+Status : Stopped
+
+Name   : ssh-agent
+Status : Stopped
+
+Name   : sshd
+Status : Stopped
+
+Name   : SensorService
+Status : Stopped
+
+Name   : WpcMonSvc
+Status : Stopped
+
+Name   : SshdBroker
+Status : Stopped
+
+Name   : WManSvc
+Status : Stopped
+
+Name   : Steam Client Service
+Status : Stopped
+
+Name   : WaaSMedicSvc
+Status : Stopped
+
+Name   : vmicvss
+Status : Stopped
+
+Name   : vmicvmsession
+Status : Stopped
+
+Name   : wcncsvc
+Status : Stopped
+
+Name   : wmiApSrv
+Status : Stopped
+
+Name   : WPDBusEnum
+Status : Stopped
+
+Name   : SensrSvc
+Status : Stopped
+
+Name   : XblGameSave
+Status : Stopped
+
+Name   : W32Time
+Status : Stopped
+
+Name   : wuauserv
+Status : Stopped
+
+Name   : SharedRealitySvc
+Status : Stopped
+
+Name   : WSearch
+Status : Stopped
+
+Name   : VSStandardCollectorService150
+Status : Stopped
+
+Name   : VSS
+Status : Stopped
+
+Name   : WwanSvc
+Status : Stopped
+
+Name   : shpamsvc
+Status : Stopped
+
+Name   : XblAuthManager
+Status : Stopped
+
+Name   : SmsRouter
+Status : Stopped
+
+Name   : SNMPTRAP
+Status : Stopped
+
+Name   : spectrum
+Status : Stopped
+
+Name   : wbengine
+Status : Stopped
+
+Name   : sppsvc
+Status : Stopped
+
+Name   : smphost
+Status : Stopped
+
+Name   : SharedAccess
+Status : Stopped
+
+Name   : wlpasvc
+Status : Stopped
+
+Name   : svsvc
+Status : Stopped
+
+Name   : tzautoupdate
+Status : Stopped
+
+Name   : WFDSConMgrSvc
+Status : Stopped
+
+Name   : VBoxSDS
+Status : Stopped
+
+Name   : UmRdpService
+Status : Stopped
+
+Name   : UnistoreSvc_6ff6505
+Status : Stopped
+
+Name   : upnphost
+Status : Stopped
+
+Name   : USER_ESRV_SVC_QUEENCREEK
+Status : Stopped
+
+Name   : WiaRpc
+Status : Stopped
+
+Name   : WerSvc
+Status : Stopped
+
+Name   : WEPHOSTSVC
+Status : Stopped
+
+Name   : UserDataSvc_6ff6505
+Status : Stopped
+
+Name   : Wecsvc
+Status : Stopped
+
+Name   : WebManagement
+Status : Stopped
+
+Name   : VacSvc
+Status : Stopped
+
+Name   : WebClient
+Status : Stopped
+
+Name   : WdNisSvc
+Status : Stopped
+
+Name   : wercplsupport
+Status : Stopped
+
+Name   : vmictimesync
+Status : Stopped
+
+Name   : TrustedInstaller
+Status : Stopped
+
+Name   : WIFIService
+Status : Stopped
+
+Name   : swprv
+Status : Stopped
+
+Name   : vmicshutdown
+Status : Stopped
+
+Name   : vmicrdv
+Status : Stopped
+
+Name   : SysMain
+Status : Stopped
+
+Name   : wlidsvc
+Status : Stopped
+
+Name   : vmickvpexchange
+Status : Stopped
+
+Name   : SystemUsageReportSvc_QUEENCREEK
+Status : Stopped
+
+Name   : TroubleshootingSvc
+Status : Stopped
+
+Name   : vmicheartbeat
+Status : Stopped
+
+Name   : WinRM
+Status : Stopped
+
+Name   : vmicguestinterface
+Status : Stopped
+
+Name   : WarpJITSvc
+Status : Stopped
+
+Name   : TieringEngineService
+Status : Stopped
+
+Name   : SensorDataService
+Status : Stopped
+
+Name   : vds
+Status : Stopped
+
+Name   : WinDefend
+Status : Stopped
+
+Name   : wisvc
+Status : Stopped
+
+Name   : WalletService
+Status : Stopped
+
+Name   : AarSvc_6ff6505
+Status : Stopped
+
+Name   : seclogon
+Status : Stopped
+
+Name   : DevQueryBroker
+Status : Stopped
+
+Name   : diagnosticshub.standardcollector.service
+Status : Stopped
+
+Name   : diagsvc
+Status : Stopped
+
+Name   : DiagTrack
+Status : Stopped
+
+Name   : DmEnrollmentSvc
+Status : Stopped
+
+Name   : dmwappushservice
+Status : Stopped
+
+Name   : dot3svc
+Status : Stopped
+
+Name   : DSAService
+Status : Stopped
+
+Name   : DSAUpdateService
+Status : Stopped
+
+Name   : DsmSvc
+Status : Stopped
+
+Name   : Eaphost
+Status : Stopped
+
+Name   : EasyAntiCheat
+Status : Stopped
+
+Name   : EFS
+Status : Stopped
+
+Name   : embeddedmode
+Status : Stopped
+
+Name   : Emulation Service
+Status : Stopped
+
+Name   : EntAppSvc
+Status : Stopped
+
+Name   : ESRV_SVC_QUEENCREEK
+Status : Stopped
+
+Name   : Fax
+Status : Stopped
+
+Name   : fdPHost
+Status : Stopped
+
+Name   : FDResPub
+Status : Stopped
+
+Name   : fhsvc
+Status : Stopped
+
+Name   : FrameServer
+Status : Stopped
+
+Name   : GoogleChromeElevationService
+Status : Stopped
+
+Name   : DevicesFlowUserSvc_6ff6505
+Status : Stopped
+
+Name   : DevicePickerUserSvc_6ff6505
+Status : Stopped
+
+Name   : DeviceInstall
+Status : Stopped
+
+Name   : DeviceAssociationBrokerSvc_6ff6505
+Status : Stopped
+
+Name   : AJRouter
+Status : Stopped
+
+Name   : ALG
+Status : Stopped
+
+Name   : AppIDSvc
+Status : Stopped
+
+Name   : AppReadiness
+Status : Stopped
+
+Name   : AppXSvc
+Status : Stopped
+
+Name   : aspnet_state
+Status : Stopped
+
+Name   : autotimesvc
+Status : Stopped
+
+Name   : AxInstSV
+Status : Stopped
+
+Name   : BcastDVRUserService_6ff6505
+Status : Stopped
+
+Name   : BcmBtRSupport
+Status : Stopped
+
+Name   : BDESVC
+Status : Stopped
+
+Name   : gpsvc
+Status : Stopped
+
+Name   : BEService
+Status : Stopped
+
+Name   : BluetoothUserService_6ff6505
+Status : Stopped
+
+Name   : CaptureService_6ff6505
+Status : Stopped
+
+Name   : CertPropSvc
+Status : Stopped
+
+Name   : ClipSVC
+Status : Stopped
+
+Name   : COMSysApp
+Status : Stopped
+
+Name   : ConsentUxUserSvc_6ff6505
+Status : Stopped
+
+Name   : cphs
+Status : Stopped
+
+Name   : CredentialEnrollmentManagerUserSvc_6ff6505
+Status : Stopped
+
+Name   : debugregsvc
+Status : Stopped
+
+Name   : defragsvc
+Status : Stopped
+
+Name   : DeveloperToolsService
+Status : Stopped
+
+Name   : BITS
+Status : Stopped
+
+Name   : SEMgrSvc
+Status : Stopped
+
+Name   : GraphicsPerfSvc
+Status : Stopped
+
+Name   : HuaweiHiSuiteService64.exe
+Status : Stopped
+
+Name   : ose64
+Status : Stopped
+
+Name   : p2pimsvc
+Status : Stopped
+
+Name   : p2psvc
+Status : Stopped
+
+Name   : XboxGipSvc
+Status : Stopped
+
+Name   : perceptionsimulation
+Status : Stopped
+
+Name   : PerfHost
+Status : Stopped
+
+Name   : PimIndexMaintenanceSvc_6ff6505
+Status : Stopped
+
+Name   : pla
+Status : Stopped
+
+Name   : PNRPAutoReg
+Status : Stopped
+
+Name   : PNRPsvc
+Status : Stopped
+
+Name   : PrintNotify
+Status : Stopped
+
+Name   : PrintWorkflowUserSvc_6ff6505
+Status : Stopped
+
+Name   : PushToInstall
+Status : Stopped
+
+Name   : QWAVE
+Status : Stopped
+
+Name   : RasAuto
+Status : Stopped
+
+Name   : RemoteAccess
+Status : Stopped
+
+Name   : RemoteRegistry
+Status : Stopped
+
+Name   : RetailDemo
+Status : Stopped
+
+Name   : RpcLocator
+Status : Stopped
+
+Name   : SCardSvr
+Status : Stopped
+
+Name   : ScDeviceEnum
+Status : Stopped
+
+Name   : SCPolicySvc
+Status : Stopped
+
+Name   : SDRSVC
+Status : Stopped
+
+Name   : NetTcpPortSharing
+Status : Stopped
+
+Name   : NetSetupSvc
+Status : Stopped
+
+Name   : Netlogon
+Status : Stopped
+
+Name   : NcdAutoSetup
+Status : Stopped
+
+Name   : HvHost
+Status : Stopped
+
+Name   : icssvc
+Status : Stopped
+
+Name   : IDriverT
+Status : Stopped
+
+Name   : Intel(R) SUR QC SAM
+Status : Stopped
+
+Name   : Intel(R) TPM Provisioning Service
+Status : Stopped
+
+Name   : IpOverUsbSvc
+Status : Stopped
+
+Name   : IpxlatCfgSvc
+Status : Stopped
+
+Name   : isaHelperSvc
+Status : Stopped
+
+Name   : klvssbridge64_20.0
+Status : Stopped
+
+Name   : kpm_launch_service
+Status : Stopped
+
+Name   : KSDE4.0
+Status : Stopped
+
+Name   : hidserv
+Status : Stopped
+
+Name   : KtmRm
+Status : Stopped
+
+Name   : lltdsvc
+Status : Stopped
+
+Name   : lmhosts
+Status : Stopped
+
+Name   : LxpSvc
+Status : Stopped
+
+Name   : MapsBroker
+Status : Stopped
+
+Name   : MEmuSVC
+Status : Stopped
+
+Name   : MessagingService_6ff6505
+Status : Stopped
+
+Name   : MSDTC
+Status : Stopped
+
+Name   : MSiSCSI
+Status : Stopped
+
+Name   : msiserver
+Status : Stopped
+
+Name   : NaturalAuthentication
+Status : Stopped
+
+Name   : NcaSvc
+Status : Stopped
+
+Name   : lfsvc
+Status : Stopped
+
+Name   : XboxNetApiSvc
+Status : Stopped
+
+
+
+PS C:\Users\Andres gomez> ls -path C:\ | where -FilterScript {$_.Attributes -eq 'Directory'} | fw -Property name -col 4
+
+
+altera                                      emulation                                  eSupport                                   MinGW
+National Instruments Downloads              PerfLogs                                   PHDGD Virtual VRAM Tool                    Windows
+
+
+PS C:\Users\Andres gomez> ls *.exe -Path C:\Windows |ft -Property @{n='Nombre';e={$_.Name}},@{n='Versión';e={$_.VersionInfo.FileVersion}},@{n='Tamaño (KB)';e={$_.Length / 1KB -as [int]}}
+
+Nombre       Versión                               Tamaño (KB)
+------       -------                               -----------
+bfsvc.exe    10.0.18362.718 (WinBuild.160101.0800)          72
+explorer.exe 10.0.18362.718 (WinBuild.160101.0800)        4514
+HelpPane.exe 10.0.18362.718 (WinBuild.160101.0800)        1035
+hh.exe       10.0.18362.718 (WinBuild.160101.0800)          18
+notepad.exe  10.0.18362.1 (WinBuild.160101.0800)           177
+regedit.exe  10.0.18362.718 (WinBuild.160101.0800)         350
+splwow64.exe 10.0.18362.476 (WinBuild.160101.0800)         130
+unins000.exe 51.50.0.0                                     691
+winhlp32.exe 10.0.18362.718 (WinBuild.160101.0800)          12
+WlanCLI.exe  1.10.17.2013                                  480
+write.exe    10.0.18362.1 (WinBuild.160101.0800)            11
+
+
+PS C:\Users\Andres gomez> ls *.exe -Path C:\Windows |fl -Property @{n='Nombre';e={$_.Name}},@{n='Versión';e={$_.VersionInfo.FileVersion}},@{n='Tamaño (KB)';e={$_.Length / 1KB -as [int]}}
+
+
+Nombre      : bfsvc.exe
+Versión     : 10.0.18362.718 (WinBuild.160101.0800)
+Tamaño (KB) : 72
+
+Nombre      : explorer.exe
+Versión     : 10.0.18362.718 (WinBuild.160101.0800)
+Tamaño (KB) : 4514
+
+Nombre      : HelpPane.exe
+Versión     : 10.0.18362.718 (WinBuild.160101.0800)
+Tamaño (KB) : 1035
+
+Nombre      : hh.exe
+Versión     : 10.0.18362.718 (WinBuild.160101.0800)
+Tamaño (KB) : 18
+
+Nombre      : notepad.exe
+Versión     : 10.0.18362.1 (WinBuild.160101.0800)
+Tamaño (KB) : 177
+
+Nombre      : regedit.exe
+Versión     : 10.0.18362.718 (WinBuild.160101.0800)
+Tamaño (KB) : 350
+
+Nombre      : splwow64.exe
+Versión     : 10.0.18362.476 (WinBuild.160101.0800)
+Tamaño (KB) : 130
+
+Nombre      : unins000.exe
+Versión     : 51.50.0.0
+Tamaño (KB) : 691
+
+Nombre      : winhlp32.exe
+Versión     : 10.0.18362.718 (WinBuild.160101.0800)
+Tamaño (KB) : 12
+
+Nombre      : WlanCLI.exe
+Versión     : 1.10.17.2013
+Tamaño (KB) : 480
+
+Nombre      : write.exe
+Versión     : 10.0.18362.1 (WinBuild.160101.0800)
+Tamaño (KB) : 11
+
+
+
+PS C:\Users\Andres gomez> Import-Module NetAdapter
+PS C:\Users\Andres gomez> Get-NetAdapter | Select-Object -Property Name,Virtual | Where-Object -Filter {$_.Virtual -eq $false} | fl -Property *
+
+
+Name    : Ethernet 6
+Virtual : False
+
+Name    : Wi-Fi 4
+Virtual : False
+
+Name    : Ethernet
+Virtual : False
+
+
+
+PS C:\Users\Andres gomez> Import-Module dnsclient
+PS C:\Users\Andres gomez> Get-DnsClientCache -Type A,AAAA | fl *
+
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : ad.wretch.cc
+Name                  :
+Section               : 0
+Status                : 9501
+TimeToLive            : 0
+Type                  : 28
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  : 0.0.0.0
+DataLength            : 4
+Entry                 : ad.wretch.cc
+Name                  : ad.wretch.cc
+Section               : 1
+Status                : 0
+TimeToLive            : 0
+Type                  : 1
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : addjump.com
+Name                  :
+Section               : 0
+Status                : 9501
+TimeToLive            : 0
+Type                  : 28
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  : 0.0.0.0
+DataLength            : 4
+Entry                 : addjump.com
+Name                  : addjump.com
+Section               : 1
+Status                : 0
+TimeToLive            : 0
+Type                  : 1
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : admanager.tvysoftware.com
+Name                  :
+Section               : 0
+Status                : 9501
+TimeToLive            : 0
+Type                  : 28
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  : 0.0.0.0
+DataLength            : 4
+Entry                 : admanager.tvysoftware.com
+Name                  : admanager.tvysoftware.com
+Section               : 1
+Status                : 0
+TimeToLive            : 0
+Type                  : 1
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : openx.cnpapers.com
+Name                  :
+Section               : 0
+Status                : 9501
+TimeToLive            : 0
+Type                  : 28
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  : 0.0.0.0
+DataLength            : 4
+Entry                 : openx.cnpapers.com
+Name                  : openx.cnpapers.com
+Section               : 1
+Status                : 0
+TimeToLive            : 0
+Type                  : 1
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : sdo.oewabox.at
+Name                  :
+Section               : 0
+Status                : 9501
+TimeToLive            : 0
+Type                  : 28
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  : 0.0.0.0
+DataLength            : 4
+Entry                 : sdo.oewabox.at
+Name                  : sdo.oewabox.at
+Section               : 1
+Status                : 0
+TimeToLive            : 0
+Type                  : 1
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : naj.sk
+Name                  :
+Section               : 0
+Status                : 9501
+TimeToLive            : 0
+Type                  : 28
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  : 0.0.0.0
+DataLength            : 4
+Entry                 : naj.sk
+Name                  : naj.sk
+Section               : 1
+Status                : 0
+TimeToLive            : 0
+Type                  : 1
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : www.ebannertraffic.com
+Name                  :
+Section               : 0
+Status                : 9501
+TimeToLive            : 0
+Type                  : 28
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  : 0.0.0.0
+DataLength            : 4
+Entry                 : www.ebannertraffic.com
+Name                  : www.ebannertraffic.com
+Section               : 1
+Status                : 0
+TimeToLive            : 0
+Type                  : 1
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : aquasoft.us.intellitxt.com
+Name                  :
+Section               : 0
+Status                : 9501
+TimeToLive            : 0
+Type                  : 28
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  : 0.0.0.0
+DataLength            : 4
+Entry                 : aquasoft.us.intellitxt.com
+Name                  : aquasoft.us.intellitxt.com
+Section               : 1
+Status                : 0
+TimeToLive            : 0
+Type                  : 1
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : spd.atdmt.speedera.net
+Name                  :
+Section               : 0
+Status                : 9501
+TimeToLive            : 0
+Type                  : 28
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  : 0.0.0.0
+DataLength            : 4
+Entry                 : spd.atdmt.speedera.net
+Name                  : spd.atdmt.speedera.net
+Section               : 1
+Status                : 0
+TimeToLive            : 0
+Type                  : 1
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : kz.js.need2find.com
+Name                  :
+Section               : 0
+Status                : 9501
+TimeToLive            : 0
+Type                  : 28
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  : 0.0.0.0
+DataLength            : 4
+Entry                 : kz.js.need2find.com
+Name                  : kz.js.need2find.com
+Section               : 1
+Status                : 0
+TimeToLive            : 0
+Type                  : 1
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : ma156-r.analytics.edgekey.net
+Name                  :
+Section               : 0
+Status                : 9501
+TimeToLive            : 0
+Type                  : 28
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  : 0.0.0.0
+DataLength            : 4
+Entry                 : ma156-r.analytics.edgekey.net
+Name                  : ma156-r.analytics.edgekey.net
+Section               : 1
+Status                : 0
+TimeToLive            : 0
+Type                  : 1
+PSComputerName        :
+CimClass              : ROOT/StandardCimv2:MSFT_DNSClientCache
+CimInstanceProperties : {Caption, Description, ElementName, InstanceID...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+TTL                   : 0
+Caption               :
+Description           :
+ElementName           :
+InstanceID            :
+Data                  :
+DataLength            : 0
+Entry                 : oascentral.adage.com
+Name                  :
+>> ErrorTerminación(): "Se ha detenido la canalización."
+>> ErrorTerminación(): "Se ha detenido la canalización."
+PS C:\Users\Andres gomez> ls *.exe -path C:\Windows\System32 | where -FilterScript {$_.Length /1MB -gt 5 } | fl -Property name,@{n='Tamaño (MB)';e={$_.Length / 1MB -as [int]}}
+
+
+Name        : MRT.exe
+Tamaño (MB) : 116
+
+Name        : ntoskrnl.exe
+Tamaño (MB) : 9
+
+Name        : VsGraphicsDesktopEngine.exe
+Tamaño (MB) : 5
+
+
+
+PS C:\Users\Andres gomez> Get-HotFix | where -FilterScript {$_.Description -eq 'Security update'} | fl -Property *
+
+
+PSComputerName      : APC
+InstalledOn         : 02/09/2019 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4503308",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4503308",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4503308
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4503308
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4503308",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 01/09/2019 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4508433",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4508433",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4508433
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4508433
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4508433",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 10/09/2019 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4515383",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4515383",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4515383
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4515383
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4515383",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 09/09/2019 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4515530",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4515530",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4515530
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4515530
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4515530",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 10/09/2019 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4516115",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4516115",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4516115
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4516115
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4516115",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 04/10/2019 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4520390",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4520390",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4520390
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4520390
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4520390",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 09/10/2019 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4521863",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4521863",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4521863
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4521863
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4521863",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 16/11/2019 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4524569",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4524569",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4524569
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4524569
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4524569",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 27/10/2019 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4525419",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4525419",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4525419
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4525419
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4525419",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 16/01/2020 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4528759",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4528759",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4528759
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4528759
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4528759",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 17/02/2020 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4537759",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4537759",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4537759
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4537759
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4537759",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 15/02/2020 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4538674",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4538674",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4538674
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4538674
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4538674",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+PSComputerName      : APC
+InstalledOn         : 15/03/2020 12:00:00 a. m.
+__PATH              : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4541338",ServicePackInEffect=""
+Status              :
+__GENUS             : 2
+__CLASS             : Win32_QuickFixEngineering
+__SUPERCLASS        : CIM_LogicalElement
+__DYNASTY           : CIM_ManagedSystemElement
+__RELPATH           : Win32_QuickFixEngineering.HotFixID="KB4541338",ServicePackInEffect=""
+__PROPERTY_COUNT    : 11
+__DERIVATION        : {CIM_LogicalElement, CIM_ManagedSystemElement}
+__SERVER            : APC
+__NAMESPACE         : root\cimv2
+Caption             : http://support.microsoft.com/?kbid=4541338
+CSName              : APC
+Description         : Security Update
+FixComments         :
+HotFixID            : KB4541338
+InstallDate         :
+InstalledBy         : NT AUTHORITY\SYSTEM
+Name                :
+ServicePackInEffect :
+Scope               : System.Management.ManagementScope
+Path                : \\APC\root\cimv2:Win32_QuickFixEngineering.HotFixID="KB4541338",ServicePackInEffect=""
+Options             : System.Management.ObjectGetOptions
+ClassPath           : \\APC\root\cimv2:Win32_QuickFixEngineering
+Properties          : {Caption, CSName, Description, FixComments...}
+SystemProperties    : {__GENUS, __CLASS, __SUPERCLASS, __DYNASTY...}
+Qualifiers          : {dynamic, Locale, provider, UUID}
+Site                :
+Container           :
+
+
+
+PS C:\Users\Andres gomez> Get-HotFix | where -FilterScript {$_.Installed -eq 'Administrador'} | fl -Property *
+PS C:\Users\Andres gomez> Get-HotFix | where -FilterScript {$_.Installed -eq 'System'} | fl -Property *
+PS C:\Users\Andres gomez> Get-HotFix | where -FilterScript {$_.Installedby -eq 'System'} | fl -Property *
+
+PS C:\Users\Andres gomez> Get-process | Where {$_.Name -like 'Svchost*' -or $_.Name -like 'Conhost*'} | ft -Property id ,ProcessName, Description -Wrap -AutoSize
+
+   Id ProcessName Description
+   -- ----------- -----------
+ 4772 conhost
+  908 svchost
+ 1036 svchost
+ 1044 svchost
+ 1068 svchost
+ 1088 svchost
+ 1252 svchost
+ 1308 svchost
+ 1448 svchost
+ 1460 svchost
+ 1556 svchost
+ 1600 svchost
+ 1672 svchost
+ 1796 svchost
+ 1852 svchost
+ 1892 svchost
+ 1900 svchost
+ 1976 svchost
+ 2068 svchost
+ 2084 svchost
+ 2112 svchost
+ 2140 svchost
+ 2184 svchost
+ 2216 svchost
+ 2228 svchost
+ 2268 svchost
+ 2276 svchost
+ 2468 svchost
+ 2496 svchost
+ 2504 svchost     Proceso host para los servicios de Windows
+ 2532 svchost
+ 2584 svchost
+ 2652 svchost
+ 2732 svchost
+ 2736 svchost
+ 2836 svchost
+ 2948 svchost
+ 2956 svchost
+ 3020 svchost
+ 3084 svchost
+ 3312 svchost
+ 3320 svchost
+ 3380 svchost
+ 3424 svchost
+ 3604 svchost
+ 3760 svchost
+ 3876 svchost
+ 3884 svchost
+ 4036 svchost
+ 4044 svchost
+ 4056 svchost
+ 4076 svchost     Proceso host para los servicios de Windows
+ 4104 svchost
+ 4180 svchost
+ 4400 svchost
+ 4440 svchost
+ 4668 svchost
+ 4704 svchost
+ 4812 svchost
+ 5092 svchost
+ 5236 svchost
+ 5276 svchost
+ 5536 svchost
+ 6136 svchost
+ 6156 svchost
+ 6300 svchost
+ 6484 svchost
+ 6644 svchost
+ 6856 svchost
+ 7076 svchost
+ 7292 svchost
+ 7356 svchost
+ 8360 svchost
+ 8708 svchost
+ 9496 svchost
+ 9688 svchost
+10948 svchost
+12144 svchost     Proceso host para los servicios de Windows
+13224 svchost
+15072 svchost     Proceso host para los servicios de Windows
+
+PS C:\Users\Andres gomez> Get-process | Where {$_.Name -like 'Svchost*' -or $_.Name -like 'Conhost*'} | fl -Property id ,ProcessName, Description
+
+
+Id          : 4772
+ProcessName : conhost
+Description : 
+
+Id          : 908
+ProcessName : svchost
+Description : 
+
+Id          : 1044
+ProcessName : svchost
+Description : 
+
+Id          : 1068
+ProcessName : svchost
+Description : 
+
+Id          : 1088
+ProcessName : svchost
+Description : 
+
+Id          : 1252
+ProcessName : svchost
+Description : 
+
+Id          : 1308
+ProcessName : svchost
+Description : 
+
+Id          : 1448
+ProcessName : svchost
+Description : 
+
+Id          : 1460
+ProcessName : svchost
+Description : 
+
+Id          : 1556
+ProcessName : svchost
+Description : 
+
+Id          : 1600
+ProcessName : svchost
+Description : 
+
+Id          : 1672
+ProcessName : svchost
+Description : 
+
+Id          : 1796
+ProcessName : svchost
+Description : 
+
+Id          : 1852
+ProcessName : svchost
+Description : 
+
+Id          : 1892
+ProcessName : svchost
+Description : 
+
+Id          : 1900
+ProcessName : svchost
+Description : 
+
+Id          : 1976
+ProcessName : svchost
+Description : 
+
+Id          : 2068
+ProcessName : svchost
+Description : 
+
+Id          : 2084
+ProcessName : svchost
+Description : 
+
+Id          : 2112
+ProcessName : svchost
+Description : 
+
+Id          : 2140
+ProcessName : svchost
+Description : 
+
+Id          : 2184
+ProcessName : svchost
+Description : 
+
+Id          : 2216
+ProcessName : svchost
+Description : 
+
+Id          : 2228
+ProcessName : svchost
+Description : 
+
+Id          : 2268
+ProcessName : svchost
+Description : 
+
+Id          : 2276
+ProcessName : svchost
+Description : 
+
+Id          : 2468
+ProcessName : svchost
+Description : 
+
+Id          : 2496
+ProcessName : svchost
+Description : 
+
+Id          : 2504
+ProcessName : svchost
+Description : Proceso host para los servicios de Windows
+
+Id          : 2532
+ProcessName : svchost
+Description : 
+
+Id          : 2584
+ProcessName : svchost
+Description : 
+
+Id          : 2652
+ProcessName : svchost
+Description : 
+
+Id          : 2732
+ProcessName : svchost
+Description : 
+
+Id          : 2736
+ProcessName : svchost
+Description : 
+
+Id          : 2836
+ProcessName : svchost
+Description : 
+
+Id          : 2948
+ProcessName : svchost
+Description : 
+
+Id          : 2956
+ProcessName : svchost
+Description : 
+
+Id          : 3020
+ProcessName : svchost
+Description : 
+
+Id          : 3084
+ProcessName : svchost
+Description : 
+
+Id          : 3312
+ProcessName : svchost
+Description : 
+
+Id          : 3320
+ProcessName : svchost
+Description : 
+
+Id          : 3380
+ProcessName : svchost
+Description : 
+
+Id          : 3424
+ProcessName : svchost
+Description : 
+
+Id          : 3604
+ProcessName : svchost
+Description : 
+
+Id          : 3760
+ProcessName : svchost
+Description : 
+
+Id          : 3876
+ProcessName : svchost
+Description : 
+
+Id          : 3884
+ProcessName : svchost
+Description : 
+
+Id          : 4036
+ProcessName : svchost
+Description : 
+
+Id          : 4044
+ProcessName : svchost
+Description : 
+
+Id          : 4056
+ProcessName : svchost
+Description : 
+
+Id          : 4076
+ProcessName : svchost
+Description : Proceso host para los servicios de Windows
+
+Id          : 4104
+ProcessName : svchost
+Description : 
+
+Id          : 4400
+ProcessName : svchost
+Description : 
+
+Id          : 4440
+ProcessName : svchost
+Description : 
+
+Id          : 4668
+ProcessName : svchost
+Description : 
+
+Id          : 4704
+ProcessName : svchost
+Description : 
+
+Id          : 4812
+ProcessName : svchost
+Description : 
+
+Id          : 5092
+ProcessName : svchost
+Description : 
+
+Id          : 5236
+ProcessName : svchost
+Description : 
+
+Id          : 5276
+ProcessName : svchost
+Description : 
+
+Id          : 5536
+ProcessName : svchost
+Description : 
+
+Id          : 6136
+ProcessName : svchost
+Description : 
+
+Id          : 6156
+ProcessName : svchost
+Description : 
+
+Id          : 6300
+ProcessName : svchost
+Description : 
+
+Id          : 6484
+ProcessName : svchost
+Description : 
+
+Id          : 6644
+ProcessName : svchost
+Description : 
+
+Id          : 6692
+ProcessName : svchost
+Description : 
+
+Id          : 6856
+ProcessName : svchost
+Description : 
+
+Id          : 7076
+ProcessName : svchost
+Description : 
+
+Id          : 7292
+ProcessName : svchost
+Description : 
+
+Id          : 7356
+ProcessName : svchost
+Description : 
+
+Id          : 7892
+ProcessName : svchost
+Description : 
+
+Id          : 8360
+ProcessName : svchost
+Description : 
+
+Id          : 8708
+ProcessName : svchost
+Description : 
+
+Id          : 9496
+ProcessName : svchost
+Description : 
+
+Id          : 9688
+ProcessName : svchost
+Description : 
+
+Id          : 10156
+ProcessName : svchost
+Description : 
+
+Id          : 10948
+ProcessName : svchost
+Description : 
+
+Id          : 12144
+ProcessName : svchost
+Description : Proceso host para los servicios de Windows
+
+Id          : 12936
+ProcessName : svchost
+Description : 
+
+Id          : 13224
+ProcessName : svchost
+Description : 
+
+Id          : 13972
+ProcessName : svchost
+Description : 
+
+Id          : 15072
+ProcessName : svchost
+Description : Proceso host para los servicios de Windows
+
+PS C:\Users\Andres gomez> Get-WmiObject -Namespace root\CIMv2 -class Win32_QuickFixEngineering
+
+Source        Description      HotFixID      InstalledBy          InstalledOn
+------        -----------      --------      -----------          -----------
+APC           Update           KB4537572     NT AUTHORITY\SYSTEM  16/03/2020 12:00:00 a. m.
+APC           Security Update  KB4503308     NT AUTHORITY\SYSTEM  02/09/2019 12:00:00 a. m.
+APC           Security Update  KB4508433     NT AUTHORITY\SYSTEM  01/09/2019 12:00:00 a. m.
+APC           Security Update  KB4515383     NT AUTHORITY\SYSTEM  10/09/2019 12:00:00 a. m.
+APC           Security Update  KB4515530     NT AUTHORITY\SYSTEM  09/09/2019 12:00:00 a. m.
+APC           Security Update  KB4516115     NT AUTHORITY\SYSTEM  10/09/2019 12:00:00 a. m.
+APC           Security Update  KB4520390     NT AUTHORITY\SYSTEM  04/10/2019 12:00:00 a. m.
+APC           Security Update  KB4521863     NT AUTHORITY\SYSTEM  09/10/2019 12:00:00 a. m.
+APC           Security Update  KB4524569     NT AUTHORITY\SYSTEM  16/11/2019 12:00:00 a. m.
+APC           Security Update  KB4525419     NT AUTHORITY\SYSTEM  27/10/2019 12:00:00 a. m.
+APC           Security Update  KB4528759     NT AUTHORITY\SYSTEM  16/01/2020 12:00:00 a. m.
+APC           Security Update  KB4537759     NT AUTHORITY\SYSTEM  17/02/2020 12:00:00 a. m.
+APC           Security Update  KB4538674     NT AUTHORITY\SYSTEM  15/02/2020 12:00:00 a. m.
+APC           Security Update  KB4541338     NT AUTHORITY\SYSTEM  15/03/2020 12:00:00 a. m.
+APC           Update           KB4551762     NT AUTHORITY\SYSTEM  16/03/2020 12:00:00 a. m.
+
+
+PS C:\Users\Andres gomez> Get-HotFix
+
+Source        Description      HotFixID      InstalledBy          InstalledOn
+------        -----------      --------      -----------          -----------
+APC           Update           KB4537572     NT AUTHORITY\SYSTEM  16/03/2020 12:00:00 a. m.
+APC           Security Update  KB4503308     NT AUTHORITY\SYSTEM  02/09/2019 12:00:00 a. m.
+APC           Security Update  KB4508433     NT AUTHORITY\SYSTEM  01/09/2019 12:00:00 a. m.
+APC           Security Update  KB4515383     NT AUTHORITY\SYSTEM  10/09/2019 12:00:00 a. m.
+APC           Security Update  KB4515530     NT AUTHORITY\SYSTEM  09/09/2019 12:00:00 a. m.
+APC           Security Update  KB4516115     NT AUTHORITY\SYSTEM  10/09/2019 12:00:00 a. m.
+APC           Security Update  KB4520390     NT AUTHORITY\SYSTEM  04/10/2019 12:00:00 a. m.
+APC           Security Update  KB4521863     NT AUTHORITY\SYSTEM  09/10/2019 12:00:00 a. m.
+APC           Security Update  KB4524569     NT AUTHORITY\SYSTEM  16/11/2019 12:00:00 a. m.
+APC           Security Update  KB4525419     NT AUTHORITY\SYSTEM  27/10/2019 12:00:00 a. m.
+APC           Security Update  KB4528759     NT AUTHORITY\SYSTEM  16/01/2020 12:00:00 a. m.
+APC           Security Update  KB4537759     NT AUTHORITY\SYSTEM  17/02/2020 12:00:00 a. m.
+APC           Security Update  KB4538674     NT AUTHORITY\SYSTEM  15/02/2020 12:00:00 a. m.
+APC           Security Update  KB4541338     NT AUTHORITY\SYSTEM  15/03/2020 12:00:00 a. m.
+APC           Update           KB4551762     NT AUTHORITY\SYSTEM  16/03/2020 12:00:00 a. m.
+
+
+PS C:\Users\Andres gomez> Get-WmiObject -Namespace ROOT\CIMV2 -Class Win32_Service | Select-Object name, Status,StartMode,Startname | fl *
+
+
+name      : AdobeARMservice
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : AJRouter
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : ALG
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : AppIDSvc
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\LocalService
+
+name      : Appinfo
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : AppReadiness
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : AppXSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : aspnet_state
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\NetworkService
+
+name      : AudioEndpointBuilder
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : Audiosrv
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\LocalService
+
+name      : autotimesvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : AVP20.0
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : AxInstSV
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : BcmBtRSupport
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : BDESVC
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : BEService
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : BFE
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\LocalService
+
+name      : BITS
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : BrokerInfrastructure
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : BTAGService
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : BthAvctpSvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : bthserv
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : camsvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : CDPSvc
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\LocalService
+
+name      : CertPropSvc
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : ClickToRunSvc
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : ClipSVC
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : COMSysApp
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : CoreMessagingRegistrar
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\LocalService
+
+name      : cphs
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : CryptSvc
+Status    : OK
+StartMode : Auto
+Startname : NT Authority\NetworkService
+
+name      : DcomLaunch
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : debugregsvc
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : defragsvc
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : DeveloperToolsService
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : DeviceAssociationService
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : DeviceInstall
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : DevQueryBroker
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : Dhcp
+Status    : OK
+StartMode : Auto
+Startname : NT Authority\LocalService
+
+name      : diagnosticshub.standardcollector.service
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : diagsvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : DiagTrack
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : DispBrokerDesktopSvc
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\LocalService
+
+name      : DisplayEnhancementService
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : DmEnrollmentSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : dmwappushservice
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : Dnscache
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\NetworkService
+
+name      : DoSvc
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\NetworkService
+
+name      : dot3svc
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : DPS
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\LocalService
+
+name      : DSAService
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : DSAUpdateService
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : DsmSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : DsSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : DusmSvc
+Status    : OK
+StartMode : Auto
+Startname : NT Authority\LocalService
+
+name      : Eaphost
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : EasyAntiCheat
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : EFS
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : embeddedmode
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : Emulation Service
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : EntAppSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : esifsvc
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : ESRV_SVC_QUEENCREEK
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : EventLog
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\LocalService
+
+name      : EventSystem
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\LocalService
+
+name      : Fax
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\NetworkService
+
+name      : fdPHost
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : FDResPub
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : fhsvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : FontCache
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\LocalService
+
+name      : FontCache3.0.0.0
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\LocalService
+
+name      : FrameServer
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : GoogleChromeElevationService
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : gpsvc
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : GraphicsPerfSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : hidserv
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : HuaweiHiSuiteService64.exe
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : HvHost
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : ICEsoundService
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : icssvc
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\LocalService
+
+name      : IDriverT
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : igfxCUIService2.0.0.0
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : IKEEXT
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : InstallService
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : Intel(R) Capability Licensing Service TCP IP Interface
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : Intel(R) Security Assist
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : Intel(R) SUR QC SAM
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : Intel(R) TPM Provisioning Service
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : iphlpsvc
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : IpOverUsbSvc
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : IpxlatCfgSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : isaHelperSvc
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : jhi_service
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : JTAGServer
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : KeyIso
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : klvssbridge64_20.0
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : kpm_launch_service
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : KSDE4.0
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : KtmRm
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\NetworkService
+
+name      : LanmanServer
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : LanmanWorkstation
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\NetworkService
+
+name      : lfsvc
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : LicenseManager
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\LocalService
+
+name      : lltdsvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : lmhosts
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : LMS
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : LSM
+Status    : UNKNOWN
+StartMode : Unknown
+Startname :
+
+name      : LxpSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : MapsBroker
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\NetworkService
+
+name      : MEmuSVC
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : mpssvc
+Status    : OK
+StartMode : Auto
+Startname : NT Authority\LocalService
+
+name      : MSDTC
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\NetworkService
+
+name      : MSiSCSI
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : msiserver
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : NaturalAuthentication
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : NcaSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : NcbService
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : NcdAutoSetup
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : Netlogon
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : Netman
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : netprofm
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : NetSetupSvc
+Status    : UNKNOWN
+StartMode : Unknown
+Startname :
+
+name      : NetTcpPortSharing
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\LocalService
+
+name      : NgcCtnrSvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : NgcSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : NlaSvc
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\NetworkService
+
+name      : nsi
+Status    : OK
+StartMode : Auto
+Startname : NT Authority\LocalService
+
+name      : ose64
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : p2pimsvc
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\LocalService
+
+name      : p2psvc
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\LocalService
+
+name      : PcaSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : perceptionsimulation
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : PerfHost
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : PhoneSvc
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\LocalService
+
+name      : pla
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : PlugPlay
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : PNRPAutoReg
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : PNRPsvc
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\LocalService
+
+name      : PolicyAgent
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\NetworkService
+
+name      : Power
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : PrintNotify
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : ProfSvc
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : PushToInstall
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : QWAVE
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : RasAuto
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : RasMan
+Status    : OK
+StartMode : Auto
+Startname : localSystem
+
+name      : RemoteAccess
+Status    : OK
+StartMode : Disabled
+Startname : localSystem
+
+name      : RemoteRegistry
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\LocalService
+
+name      : RetailDemo
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : RmSvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : RpcEptMapper
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\NetworkService
+
+name      : RpcLocator
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\NetworkService
+
+name      : RpcSs
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\NetworkService
+
+name      : SamSs
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : SCardSvr
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : ScDeviceEnum
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : Schedule
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : SCPolicySvc
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : SDRSVC
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : seclogon
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : SecurityHealthService
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : SEMgrSvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : SENS
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : SensorDataService
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : SensorService
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : SensrSvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : SessionEnv
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : SgrmBroker
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : SharedAccess
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : SharedRealitySvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : ShellHWDetection
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : shpamsvc
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : smphost
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\NetworkService
+
+name      : SmsRouter
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\LocalService
+
+name      : SNMPTRAP
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\LocalService
+
+name      : spectrum
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : Spooler
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : sppsvc
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\NetworkService
+
+name      : SQLWriter
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : SSDPSRV
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : ssh-agent
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : sshd
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : SshdBroker
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : SstpSvc
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\LocalService
+
+name      : StateRepository
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : Steam Client Service
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : stisvc
+Status    : OK
+StartMode : Auto
+Startname : NT Authority\LocalService
+
+name      : StorSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : svsvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : swprv
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : SysMain
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : SystemEventsBroker
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : SystemUsageReportSvc_QUEENCREEK
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : TabletInputService
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : TapiSrv
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\NetworkService
+
+name      : TermService
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\NetworkService
+
+name      : Themes
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : TieringEngineService
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : TimeBrokerSvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : TokenBroker
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : TrkWks
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : TroubleshootingSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : TrustedInstaller
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : tzautoupdate
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\LocalService
+
+name      : UmRdpService
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : upnphost
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\LocalService
+
+name      : UserManager
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : USER_ESRV_SVC_QUEENCREEK
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : UsoSvc
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : VacSvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : VaultSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : VBoxSDS
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : vds
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : VMAuthdService
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : vmicguestinterface
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : vmicheartbeat
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : vmickvpexchange
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : vmicrdv
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : vmicshutdown
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : vmictimesync
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : vmicvmsession
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : vmicvss
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : VMnetDHCP
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : VMUSBArbService
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : VMware NAT Service
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : VSS
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : W32Time
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : WaaSMedicSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : WalletService
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : WarpJITSvc
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\LocalService
+
+name      : wbengine
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : WbioSrvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : Wcmsvc
+Status    : OK
+StartMode : Auto
+Startname : NT Authority\LocalService
+
+name      : wcncsvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : WdiServiceHost
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : WdiSystemHost
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : WdNisSvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : WebClient
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\LocalService
+
+name      : WebManagement
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : Wecsvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\NetworkService
+
+name      : WEPHOSTSVC
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : wercplsupport
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : WerSvc
+Status    : OK
+StartMode : Disabled
+Startname : localSystem
+
+name      : WFDSConMgrSvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : WiaRpc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : WIFIService
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : WinDefend
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : WinHttpAutoProxySvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : Winmgmt
+Status    : OK
+StartMode : Auto
+Startname : localSystem
+
+name      : WinRM
+Status    : OK
+StartMode : Disabled
+Startname : NT AUTHORITY\NetworkService
+
+name      : wisvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : WlanSvc
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : wlidsvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : wlpasvc
+Status    : OK
+StartMode : Manual
+Startname : NT Authority\LocalService
+
+name      : WManSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : wmiApSrv
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : WMPNetworkSvc
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\NetworkService
+
+name      : workfolderssvc
+Status    : OK
+StartMode : Manual
+Startname : NT AUTHORITY\LocalService
+
+name      : WpcMonSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : WPDBusEnum
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : WpnService
+Status    : OK
+StartMode : Auto
+Startname : LocalSystem
+
+name      : wscsvc
+Status    : OK
+StartMode : Auto
+Startname : NT AUTHORITY\LocalService
+
+name      : WSearch
+Status    : OK
+StartMode : Disabled
+Startname : LocalSystem
+
+name      : wuauserv
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : WwanSvc
+Status    : OK
+StartMode : Manual
+Startname : localSystem
+
+name      : XblAuthManager
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : XblGameSave
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : XboxGipSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : XboxNetApiSvc
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : VSStandardCollectorService150
+Status    : OK
+StartMode : Manual
+Startname : LocalSystem
+
+name      : AarSvc_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : BcastDVRUserService_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : BluetoothUserService_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : CaptureService_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : cbdhsvc_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : CDPUserSvc_8cf0347
+Status    : OK
+StartMode : Auto
+Startname :
+
+name      : ConsentUxUserSvc_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : CredentialEnrollmentManagerUserSvc_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : DeviceAssociationBrokerSvc_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : DevicePickerUserSvc_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : DevicesFlowUserSvc_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : MessagingService_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : OneSyncSvc_8cf0347
+Status    : OK
+StartMode : Auto
+Startname :
+
+name      : PimIndexMaintenanceSvc_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : PrintWorkflowUserSvc_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : UnistoreSvc_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : UserDataSvc_8cf0347
+Status    : OK
+StartMode : Manual
+Startname :
+
+name      : WpnUserService_8cf0347
+Status    : OK
+StartMode : Auto
+Startname :
+
+
+
+PS C:\Users\Andres gomez> Get-WmiObject -Namespace ROOT\CIMV2 -Class Win32_Service | Select-Object name, Status,StartMode,Startname | ft *
+
+name                                                   Status  StartMode Startname
+----                                                   ------  --------- ---------
+AdobeARMservice                                        OK      Auto      LocalSystem
+AJRouter                                               OK      Manual    NT AUTHORITY\LocalService
+ALG                                                    OK      Manual    NT AUTHORITY\LocalService
+AppIDSvc                                               OK      Manual    NT Authority\LocalService
+Appinfo                                                OK      Manual    LocalSystem
+AppReadiness                                           OK      Manual    LocalSystem
+AppXSvc                                                OK      Manual    LocalSystem
+aspnet_state                                           OK      Manual    NT AUTHORITY\NetworkService
+AudioEndpointBuilder                                   OK      Auto      LocalSystem
+Audiosrv                                               OK      Auto      NT AUTHORITY\LocalService
+autotimesvc                                            OK      Manual    NT AUTHORITY\LocalService
+AVP20.0                                                OK      Auto      LocalSystem
+AxInstSV                                               OK      Disabled  LocalSystem
+BcmBtRSupport                                          OK      Auto      LocalSystem
+BDESVC                                                 OK      Manual    localSystem
+BEService                                              OK      Disabled  LocalSystem
+BFE                                                    OK      Auto      NT AUTHORITY\LocalService
+BITS                                                   OK      Manual    LocalSystem
+BrokerInfrastructure                                   OK      Auto      LocalSystem
+BTAGService                                            OK      Manual    NT AUTHORITY\LocalService
+BthAvctpSvc                                            OK      Manual    NT AUTHORITY\LocalService
+bthserv                                                OK      Manual    NT AUTHORITY\LocalService
+camsvc                                                 OK      Manual    LocalSystem
+CDPSvc                                                 OK      Auto      NT AUTHORITY\LocalService
+CertPropSvc                                            OK      Disabled  LocalSystem
+ClickToRunSvc                                          OK      Auto      LocalSystem
+ClipSVC                                                OK      Manual    LocalSystem
+COMSysApp                                              OK      Manual    LocalSystem
+CoreMessagingRegistrar                                 OK      Auto      NT AUTHORITY\LocalService
+cphs                                                   OK      Manual    LocalSystem
+CryptSvc                                               OK      Auto      NT Authority\NetworkService
+DcomLaunch                                             OK      Auto      LocalSystem
+debugregsvc                                            OK      Auto      LocalSystem
+defragsvc                                              OK      Manual    localSystem
+DeveloperToolsService                                  OK      Manual    LocalSystem
+DeviceAssociationService                               OK      Manual    LocalSystem
+DeviceInstall                                          OK      Manual    LocalSystem
+DevQueryBroker                                         OK      Manual    LocalSystem
+Dhcp                                                   OK      Auto      NT Authority\LocalService
+diagnosticshub.standardcollector.service               OK      Manual    LocalSystem
+diagsvc                                                OK      Manual    LocalSystem
+DiagTrack                                              OK      Disabled  LocalSystem
+DispBrokerDesktopSvc                                   OK      Auto      NT AUTHORITY\LocalService
+DisplayEnhancementService                              OK      Manual    LocalSystem
+DmEnrollmentSvc                                        OK      Manual    LocalSystem
+dmwappushservice                                       OK      Disabled  LocalSystem
+Dnscache                                               OK      Auto      NT AUTHORITY\NetworkService
+DoSvc                                                  OK      Manual    NT Authority\NetworkService
+dot3svc                                                OK      Manual    localSystem
+DPS                                                    OK      Auto      NT AUTHORITY\LocalService
+DSAService                                             OK      Disabled  LocalSystem
+DSAUpdateService                                       OK      Disabled  LocalSystem
+DsmSvc                                                 OK      Manual    LocalSystem
+DsSvc                                                  OK      Manual    LocalSystem
+DusmSvc                                                OK      Auto      NT Authority\LocalService
+Eaphost                                                OK      Manual    localSystem
+EasyAntiCheat                                          OK      Manual    LocalSystem
+EFS                                                    OK      Manual    LocalSystem
+embeddedmode                                           OK      Manual    LocalSystem
+Emulation Service                                      OK      Disabled  LocalSystem
+EntAppSvc                                              OK      Manual    LocalSystem
+esifsvc                                                OK      Auto      LocalSystem
+ESRV_SVC_QUEENCREEK                                    OK      Manual    LocalSystem
+EventLog                                               OK      Auto      NT AUTHORITY\LocalService
+EventSystem                                            OK      Auto      NT AUTHORITY\LocalService
+Fax                                                    OK      Manual    NT AUTHORITY\NetworkService
+fdPHost                                                OK      Manual    NT AUTHORITY\LocalService
+FDResPub                                               OK      Manual    NT AUTHORITY\LocalService
+fhsvc                                                  OK      Manual    LocalSystem
+FontCache                                              OK      Auto      NT AUTHORITY\LocalService
+FontCache3.0.0.0                                       OK      Manual    NT Authority\LocalService
+FrameServer                                            OK      Manual    NT AUTHORITY\LocalService
+GoogleChromeElevationService                           OK      Disabled  LocalSystem
+gpsvc                                                  OK      Auto      LocalSystem
+GraphicsPerfSvc                                        OK      Manual    LocalSystem
+hidserv                                                OK      Manual    LocalSystem
+HuaweiHiSuiteService64.exe                             OK      Disabled  LocalSystem
+HvHost                                                 OK      Manual    LocalSystem
+ICEsoundService                                        OK      Auto      LocalSystem
+icssvc                                                 OK      Manual    NT Authority\LocalService
+IDriverT                                               OK      Disabled  LocalSystem
+igfxCUIService2.0.0.0                                  OK      Auto      LocalSystem
+IKEEXT                                                 OK      Auto      LocalSystem
+InstallService                                         OK      Manual    LocalSystem
+Intel(R) Capability Licensing Service TCP IP Interface OK      Manual    LocalSystem
+Intel(R) Security Assist                               OK      Manual    LocalSystem
+Intel(R) SUR QC SAM                                    OK      Manual    LocalSystem
+Intel(R) TPM Provisioning Service                      OK      Auto      LocalSystem
+iphlpsvc                                               OK      Auto      LocalSystem
+IpOverUsbSvc                                           OK      Auto      LocalSystem
+IpxlatCfgSvc                                           OK      Manual    LocalSystem
+isaHelperSvc                                           OK      Auto      LocalSystem
+jhi_service                                            OK      Auto      LocalSystem
+JTAGServer                                             OK      Auto      LocalSystem
+KeyIso                                                 OK      Manual    LocalSystem
+klvssbridge64_20.0                                     OK      Manual    LocalSystem
+kpm_launch_service                                     OK      Manual    LocalSystem
+KSDE4.0                                                OK      Disabled  LocalSystem
+KtmRm                                                  OK      Manual    NT AUTHORITY\NetworkService
+LanmanServer                                           OK      Auto      LocalSystem
+LanmanWorkstation                                      OK      Auto      NT AUTHORITY\NetworkService
+lfsvc                                                  OK      Disabled  LocalSystem
+LicenseManager                                         OK      Manual    NT Authority\LocalService
+lltdsvc                                                OK      Manual    NT AUTHORITY\LocalService
+lmhosts                                                OK      Manual    NT AUTHORITY\LocalService
+LMS                                                    OK      Auto      LocalSystem
+LSM                                                    UNKNOWN Unknown
+LxpSvc                                                 OK      Manual    LocalSystem
+MapsBroker                                             OK      Disabled  NT AUTHORITY\NetworkService
+MEmuSVC                                                OK      Disabled  LocalSystem
+mpssvc                                                 OK      Auto      NT Authority\LocalService
+MSDTC                                                  OK      Manual    NT AUTHORITY\NetworkService
+MSiSCSI                                                OK      Disabled  LocalSystem
+msiserver                                              OK      Manual    LocalSystem
+NaturalAuthentication                                  OK      Manual    LocalSystem
+NcaSvc                                                 OK      Manual    LocalSystem
+NcbService                                             OK      Manual    LocalSystem
+NcdAutoSetup                                           OK      Manual    NT AUTHORITY\LocalService
+Netlogon                                               OK      Manual    LocalSystem
+Netman                                                 OK      Manual    LocalSystem
+netprofm                                               OK      Manual    NT AUTHORITY\LocalService
+NetSetupSvc                                            UNKNOWN Unknown
+NetTcpPortSharing                                      OK      Disabled  NT AUTHORITY\LocalService
+NgcCtnrSvc                                             OK      Manual    NT AUTHORITY\LocalService
+NgcSvc                                                 OK      Manual    LocalSystem
+NlaSvc                                                 OK      Auto      NT AUTHORITY\NetworkService
+nsi                                                    OK      Auto      NT Authority\LocalService
+ose64                                                  OK      Manual    LocalSystem
+p2pimsvc                                               OK      Disabled  NT AUTHORITY\LocalService
+p2psvc                                                 OK      Disabled  NT AUTHORITY\LocalService
+PcaSvc                                                 OK      Manual    LocalSystem
+perceptionsimulation                                   OK      Manual    LocalSystem
+PerfHost                                               OK      Manual    NT AUTHORITY\LocalService
+PhoneSvc                                               OK      Manual    NT Authority\LocalService
+pla                                                    OK      Manual    NT AUTHORITY\LocalService
+PlugPlay                                               OK      Manual    LocalSystem
+PNRPAutoReg                                            OK      Manual    NT AUTHORITY\LocalService
+PNRPsvc                                                OK      Disabled  NT AUTHORITY\LocalService
+PolicyAgent                                            OK      Manual    NT Authority\NetworkService
+Power                                                  OK      Auto      LocalSystem
+PrintNotify                                            OK      Manual    LocalSystem
+ProfSvc                                                OK      Auto      LocalSystem
+PushToInstall                                          OK      Manual    LocalSystem
+QWAVE                                                  OK      Manual    NT AUTHORITY\LocalService
+RasAuto                                                OK      Manual    localSystem
+RasMan                                                 OK      Auto      localSystem
+RemoteAccess                                           OK      Disabled  localSystem
+RemoteRegistry                                         OK      Disabled  NT AUTHORITY\LocalService
+RetailDemo                                             OK      Manual    LocalSystem
+RmSvc                                                  OK      Manual    NT AUTHORITY\LocalService
+RpcEptMapper                                           OK      Auto      NT AUTHORITY\NetworkService
+RpcLocator                                             OK      Disabled  NT AUTHORITY\NetworkService
+RpcSs                                                  OK      Auto      NT AUTHORITY\NetworkService
+SamSs                                                  OK      Auto      LocalSystem
+SCardSvr                                               OK      Manual    NT AUTHORITY\LocalService
+ScDeviceEnum                                           OK      Manual    LocalSystem
+Schedule                                               OK      Auto      LocalSystem
+SCPolicySvc                                            OK      Disabled  LocalSystem
+SDRSVC                                                 OK      Manual    localSystem
+seclogon                                               OK      Manual    LocalSystem
+SecurityHealthService                                  OK      Manual    LocalSystem
+SEMgrSvc                                               OK      Manual    NT AUTHORITY\LocalService
+SENS                                                   OK      Auto      LocalSystem
+SensorDataService                                      OK      Manual    LocalSystem
+SensorService                                          OK      Manual    LocalSystem
+SensrSvc                                               OK      Manual    NT AUTHORITY\LocalService
+SessionEnv                                             OK      Manual    localSystem
+SgrmBroker                                             OK      Auto      LocalSystem
+SharedAccess                                           OK      Manual    LocalSystem
+SharedRealitySvc                                       OK      Manual    NT AUTHORITY\LocalService
+ShellHWDetection                                       OK      Auto      LocalSystem
+shpamsvc                                               OK      Disabled  LocalSystem
+smphost                                                OK      Manual    NT AUTHORITY\NetworkService
+SmsRouter                                              OK      Manual    NT Authority\LocalService
+SNMPTRAP                                               OK      Disabled  NT AUTHORITY\LocalService
+spectrum                                               OK      Manual    NT AUTHORITY\LocalService
+Spooler                                                OK      Auto      LocalSystem
+sppsvc                                                 OK      Auto      NT AUTHORITY\NetworkService
+SQLWriter                                              OK      Auto      LocalSystem
+SSDPSRV                                                OK      Manual    NT AUTHORITY\LocalService
+ssh-agent                                              OK      Disabled  LocalSystem
+sshd                                                   OK      Manual    LocalSystem
+SshdBroker                                             OK      Manual    LocalSystem
+SstpSvc                                                OK      Manual    NT Authority\LocalService
+StateRepository                                        OK      Manual    LocalSystem
+Steam Client Service                                   OK      Manual    LocalSystem
+stisvc                                                 OK      Auto      NT Authority\LocalService
+StorSvc                                                OK      Manual    LocalSystem
+svsvc                                                  OK      Manual    LocalSystem
+swprv                                                  OK      Manual    LocalSystem
+SysMain                                                OK      Disabled  LocalSystem
+SystemEventsBroker                                     OK      Auto      LocalSystem
+SystemUsageReportSvc_QUEENCREEK                        OK      Auto      LocalSystem
+TabletInputService                                     OK      Manual    LocalSystem
+TapiSrv                                                OK      Manual    NT AUTHORITY\NetworkService
+TermService                                            OK      Manual    NT Authority\NetworkService
+Themes                                                 OK      Auto      LocalSystem
+TieringEngineService                                   OK      Manual    localSystem
+TimeBrokerSvc                                          OK      Manual    NT AUTHORITY\LocalService
+TokenBroker                                            OK      Manual    LocalSystem
+TrkWks                                                 OK      Auto      LocalSystem
+TroubleshootingSvc                                     OK      Manual    LocalSystem
+TrustedInstaller                                       OK      Manual    localSystem
+tzautoupdate                                           OK      Disabled  NT AUTHORITY\LocalService
+UmRdpService                                           OK      Manual    localSystem
+upnphost                                               OK      Disabled  NT AUTHORITY\LocalService
+UserManager                                            OK      Auto      LocalSystem
+USER_ESRV_SVC_QUEENCREEK                               OK      Manual    LocalSystem
+UsoSvc                                                 OK      Auto      LocalSystem
+VacSvc                                                 OK      Manual    NT AUTHORITY\LocalService
+VaultSvc                                               OK      Manual    LocalSystem
+VBoxSDS                                                OK      Manual    LocalSystem
+vds                                                    OK      Manual    LocalSystem
+VMAuthdService                                         OK      Auto      LocalSystem
+vmicguestinterface                                     OK      Manual    LocalSystem
+vmicheartbeat                                          OK      Manual    LocalSystem
+vmickvpexchange                                        OK      Manual    LocalSystem
+vmicrdv                                                OK      Manual    LocalSystem
+vmicshutdown                                           OK      Manual    LocalSystem
+vmictimesync                                           OK      Manual    NT AUTHORITY\LocalService
+vmicvmsession                                          OK      Manual    LocalSystem
+vmicvss                                                OK      Manual    LocalSystem
+VMnetDHCP                                              OK      Auto      LocalSystem
+VMUSBArbService                                        OK      Auto      LocalSystem
+VMware NAT Service                                     OK      Auto      LocalSystem
+VSS                                                    OK      Manual    LocalSystem
+W32Time                                                OK      Manual    NT AUTHORITY\LocalService
+WaaSMedicSvc                                           OK      Manual    LocalSystem
+WalletService                                          OK      Manual    LocalSystem
+WarpJITSvc                                             OK      Manual    NT Authority\LocalService
+wbengine                                               OK      Manual    localSystem
+WbioSrvc                                               OK      Manual    LocalSystem
+Wcmsvc                                                 OK      Auto      NT Authority\LocalService
+wcncsvc                                                OK      Manual    NT AUTHORITY\LocalService
+WdiServiceHost                                         OK      Manual    NT AUTHORITY\LocalService
+WdiSystemHost                                          OK      Manual    LocalSystem
+WdNisSvc                                               OK      Manual    NT AUTHORITY\LocalService
+WebClient                                              OK      Disabled  NT AUTHORITY\LocalService
+WebManagement                                          OK      Disabled  LocalSystem
+Wecsvc                                                 OK      Manual    NT AUTHORITY\NetworkService
+WEPHOSTSVC                                             OK      Manual    NT AUTHORITY\LocalService
+wercplsupport                                          OK      Manual    localSystem
+WerSvc                                                 OK      Disabled  localSystem
+WFDSConMgrSvc                                          OK      Manual    NT AUTHORITY\LocalService
+WiaRpc                                                 OK      Manual    LocalSystem
+WIFIService                                            OK      Auto      LocalSystem
+WinDefend                                              OK      Manual    LocalSystem
+WinHttpAutoProxySvc                                    OK      Manual    NT AUTHORITY\LocalService
+Winmgmt                                                OK      Auto      localSystem
+WinRM                                                  OK      Disabled  NT AUTHORITY\NetworkService
+wisvc                                                  OK      Manual    LocalSystem
+WlanSvc                                                OK      Auto      LocalSystem
+wlidsvc                                                OK      Manual    LocalSystem
+wlpasvc                                                OK      Manual    NT Authority\LocalService
+WManSvc                                                OK      Manual    LocalSystem
+wmiApSrv                                               OK      Manual    localSystem
+WMPNetworkSvc                                          OK      Auto      NT AUTHORITY\NetworkService
+workfolderssvc                                         OK      Manual    NT AUTHORITY\LocalService
+WpcMonSvc                                              OK      Manual    LocalSystem
+WPDBusEnum                                             OK      Manual    LocalSystem
+WpnService                                             OK      Auto      LocalSystem
+wscsvc                                                 OK      Auto      NT AUTHORITY\LocalService
+WSearch                                                OK      Disabled  LocalSystem
+wuauserv                                               OK      Manual    LocalSystem
+WwanSvc                                                OK      Manual    localSystem
+XblAuthManager                                         OK      Manual    LocalSystem
+XblGameSave                                            OK      Manual    LocalSystem
+XboxGipSvc                                             OK      Manual    LocalSystem
+XboxNetApiSvc                                          OK      Manual    LocalSystem
+VSStandardCollectorService150                          OK      Manual    LocalSystem
+AarSvc_8cf0347                                         OK      Manual
+BcastDVRUserService_8cf0347                            OK      Manual
+BluetoothUserService_8cf0347                           OK      Manual
+CaptureService_8cf0347                                 OK      Manual
+cbdhsvc_8cf0347                                        OK      Manual
+CDPUserSvc_8cf0347                                     OK      Auto
+ConsentUxUserSvc_8cf0347                               OK      Manual
+CredentialEnrollmentManagerUserSvc_8cf0347             OK      Manual
+DeviceAssociationBrokerSvc_8cf0347                     OK      Manual
+DevicePickerUserSvc_8cf0347                            OK      Manual
+DevicesFlowUserSvc_8cf0347                             OK      Manual
+MessagingService_8cf0347                               OK      Manual
+OneSyncSvc_8cf0347                                     OK      Auto
+PimIndexMaintenanceSvc_8cf0347                         OK      Manual
+PrintWorkflowUserSvc_8cf0347                           OK      Manual
+UnistoreSvc_8cf0347                                    OK      Manual
+UserDataSvc_8cf0347                                    OK      Manual
+WpnUserService_8cf0347                                 OK      Auto
+
+
+PS C:\Users\Andres gomez> Get-CimClass -Namespace root\SecurityCenter2 -ClassName *product* | Select-Object *
+
+
+CimClassName        : AntiVirusProduct
+CimSuperClassName   :
+CimSuperClass       :
+CimClassProperties  : {displayName, instanceGuid, pathToSignedProductExe, pathToSignedReportingExe...}
+CimClassQualifiers  : {}
+CimClassMethods     : {}
+CimSystemProperties : Microsoft.Management.Infrastructure.CimSystemProperties
+
+CimClassName        : AntiSpywareProduct
+CimSuperClassName   :
+CimSuperClass       :
+CimClassProperties  : {displayName, instanceGuid, pathToSignedProductExe, pathToSignedReportingExe...}
+CimClassQualifiers  : {}
+CimClassMethods     : {}
+CimSystemProperties : Microsoft.Management.Infrastructure.CimSystemProperties
+
+CimClassName        : FirewallProduct
+CimSuperClassName   :
+CimSuperClass       :
+CimClassProperties  : {displayName, instanceGuid, pathToSignedProductExe, pathToSignedReportingExe...}
+CimClassQualifiers  : {}
+CimClassMethods     : {}
+CimSystemProperties : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+PS C:\Users\Andres gomez> Get-CimClass -Namespace root\SecurityCenter2 | where cimclassname -Like '*product*'
+
+
+   NameSpace: ROOT/SecurityCenter2
+
+CimClassName                        CimClassMethods      CimClassProperties
+------------                        ---------------      ------------------
+AntiVirusProduct                    {}                   {displayName, instanceGuid, pathToSignedProductExe, pathToSignedReportingExe...}
+AntiSpywareProduct                  {}                   {displayName, instanceGuid, pathToSignedProductExe, pathToSignedReportingExe...}
+FirewallProduct                     {}                   {displayName, instanceGuid, pathToSignedProductExe, pathToSignedReportingExe...}
+
+
+PS C:\Users\Andres gomez> Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntiSpywareProduct | fl -Property displayName,productState,timestamp
+PS C:\Users\Andres gomez> Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntiVirusProduct | fl -Property displayName,productState,timestamp
+
+
+displayName  : Windows Defender
+productState : 393488
+timestamp    : Tue, 03 Dec 2019 04:23:02 GMT
+
+displayName  : Kaspersky Free
+productState : 266240
+timestamp    : Tue, 24 Mar 2020 21:33:26 GMT
+
+
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20200324014641
+**********************
