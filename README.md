@@ -1,4 +1,4 @@
-## S.O-Taller
+## S.O-Taller 3
 1.
 New-Item -ItemType File -Name "fileATaller.txt" -Value "datos1 ndato2 ndato3"
 New-Item -ItemType File -Name "fileBTaller.txt" -Value "datos0 ndato2 ndato4"
